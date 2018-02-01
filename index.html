@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>The Compendium | NITW</title>
+        <!--jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--Smooth Scroll-->
+        <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $("a").on('click', function(event) {
+        
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+        
+              // Store hash
+              var hash = this.hash;
+        
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+        </script>
+        <!--Importing Fonts-->
+        <style type = "text/css">
+            @import url('https://fonts.googleapis.com/css?family=Barlow');
+            @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Oswald|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Slabo+27px');
+        </style>
+        <!--Header CSS-->
+        <style type = "text/css">
+            body {
+                font-family: "Barlow";
+                margin-left: 15%;
+                margin-right: 15%;
+            }
+            html,head,body {
+                min-height: 100%;
+                height: 100%;
+            }
+            .main-header {
+                font-size: 36px;
+                margin-top: 15%;
+                margin-bottom: 120px;
+            }
+            .fixed-header {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 10%;
+                z-index: 9999;
+                background-color: rgba(40,40,40,0.7);
+            }
+            .fixed-header-logo-wrapper {
+                left: 4%;
+                top: 3%;
+                position: fixed;
+            }
+            .fixed-header-logo-1 {
+                font-family: "Josefin Sans";
+                font-weight: 700;
+                font-size: 20px;
+                color: white;
+                text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+            }
+            .fixed-header-logo-2 {
+                font-family: "Slabo 27px";
+                color: white;
+                font-size: 20px;
+                text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+            }
+            
+        </style>
+        <!--Body CSS-->
+        <style type = "text/css">
+            #scrollMeter-Wrap{
+            	height: 3px;
+            	width: 100%;
+            	bottom: 0px;
+            	background: transparent;
+            }
+            
+            #scrollMeter-Container{
+            	left: 0px;
+            	bottom: 50px;
+            	height: 2px;
+            	background: #ccc;
+            	position: fixed;
+            	width: 100%;
+            }
+            
+            #scrollMeter {
+            	height: 3px;
+            	background: green;
+            	width: 0%;
+            }
+            
+            #main-cover {
+                background: rgb(255,255,255);
+                position: fixed;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+                height: 50px;
+            }
+            .main-cover-percentage-indicator {
+                font-family: "Oswald";
+                font-weight: 300;
+                color: rgba(0,0,0,0.83);
+            }
+            .main-cover-percentage-indicator-2 {
+                font-family: "Barlow";
+                font-weight: 300;
+                color: rgba(0,0,0,0.83);
+            }
+            .main-cover-minutes-indicator {
+                font-family: "Oswald";
+                font-weight: 300;
+                color: rgba(0,0,0,0.83);
+            }
+        </style>
+        <!--Anchors
+            authors-note
+            patch-notes
+            authors-note-2
+            introduction
+            contents
+            deducing-time
+            history
+            local-history
+            global-history
+            deduction-of-surnames
+            creationism
+            evolutionary
+            evolution-of-animals
+            localized
+            globalized
+            post-apocalyptic
+            geography
+            theology
+            philosophy-and-moral-values
+            anthropomorphic-creatures
+    	    personality-explanation
+            internal-perspective
+            dreams
+            paranormal-occurrences
+            maple-street
+            in-the-mine
+            supernatural-creatures
+            lead-poisoned-water
+            regular-disorders-related-mental-disorders
+            other-ideas
+            conclusion-and-my-opinion
+    	    works-cited
+        -->
+    </head>
+    <body>
+        <div id = "main-compendium">
+        <center class = "main-header"><u><b>A Compendium on Night In The Woods: Setting, History, Geography, Theology and Philosophy.</b></u></center>
+        <p><strong>Version 1.0.0</strong></p>
+        <p><strong>[!] WARNING: This post will probably contain spoilers.</strong></p>
+        <p><strong>Foreword and Notice:</strong></p>
+        <a id = "authors-note"></a>
+        <p>This post will continue to be edited as new information pours in from the Weird Autumn Date, which at the time of this writing, was released just a week ago. This essay does not seek to prove anything, nor deny anything, only to offer those conclusions most probable, and most based upon evidence I have managed to forage from online playthroughs as my copy of Night in The Woods is bugged.</p>
+        <span class="hljs-keyword">If</span> you came here <span class="hljs-keyword">for</span> a short, light-hearted post, I'm sorry, this just isn't <span class="hljs-keyword">for</span> you. This <span class="hljs-keyword">is</span> a rather long paper, being at the time <span class="hljs-keyword">of</span> this writing, over <span class="hljs-number">15</span>,<span class="hljs-number">000</span> words. This will also deal <span class="hljs-keyword">with</span> different philosophical <span class="hljs-keyword">and</span> theological topics <span class="hljs-keyword">as</span> mentioned here. It <span class="hljs-keyword">is</span> also <span class="hljs-keyword">to</span> be noted that this version <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> proofread, <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> edited, <span class="hljs-keyword">and</span> thus contains a lot <span class="hljs-keyword">of</span> stubs, <span class="hljs-keyword">and</span> bridge-heads <span class="hljs-keyword">to</span> be further explored.
+        <p>It should also be noted that this is a communal project. As such, if you have any further ideas as to the nature of the game, preferably, such that does not have to do with the main plot of the game, such as the game's geographical standing, it's history, theological differences from the game and real life, (e.g. The composition of the American Navy as evidenced by the Navy Recruiter.) It would also be handy if you could mine out the dialogue trees of the new characters in Weird Autumn.</p>
+        <a id = "patch-notes"></a>
+        <p><strong>Patch Notes:</strong></p>
+        <ul>
+        <li><strong></strong> 1.0.0: <em>Essay Released.</em></li>
+        </ul>
+        <p><strong>To-do (Future Work):</strong></p>
+        <p><strong>Note:</strong> Versioning system, <strong>X.Y.Z</strong> , in which Z represents minor edits, Y represents major edits, and X represents a complete rewrite (maybe one day).</p>
+        <ul>
+        <li><strong></strong> 1.0.1: <em>Release minor edits.</em></li>
+        <li><strong></strong> 1.1.1: <em>Restructure Essay in Alphabetical order, re-write certain sections, expand Theological and Geographical content.</em></li>
+        </ul>
+        <a id = "authors-note-2"></a>
+        <p><em>A note from the author:</em></p>
+            I normally <span class="hljs-keyword">do</span> <span class="hljs-keyword">not</span> play narrative games, (<span class="hljs-keyword">in</span> fact, I prefer strategy) <span class="hljs-keyword">or</span> watch them, but something about this game had its appeal, <span class="hljs-keyword">and</span> <span class="hljs-keyword">by</span> the time I had gotten around <span class="hljs-keyword">to</span> seeing the ending, I was already thinking about the many aspects <span class="hljs-keyword">of</span> this game.
+        
+            I am also aware that both Occam <span class="hljs-keyword">and</span> Newton's razor may cut many <span class="hljs-keyword">of</span> these ideas off, <span class="hljs-keyword">as</span> some cannot be proven, <span class="hljs-keyword">and</span> some simply make too many hypotheses, assumptions, <span class="hljs-keyword">and</span> guesses. I welcome the exception <span class="hljs-keyword">of</span> better, <span class="hljs-keyword">or</span> improved versions <span class="hljs-keyword">of</span> these ideas. This <span class="hljs-keyword">is</span> also the unedited <span class="hljs-keyword">copy</span> <span class="hljs-keyword">of</span> this paper, <span class="hljs-keyword">and</span> its conception <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">final</span>, <span class="hljs-keyword">in</span> fact, it <span class="hljs-keyword">is</span> one <span class="hljs-keyword">of</span> a prototype. It must also be noted that I <span class="hljs-keyword">do</span> <span class="hljs-keyword">not</span> believe everything <span class="hljs-keyword">in</span> this game should be taken at face value, <span class="hljs-keyword">and</span> that much <span class="hljs-keyword">of</span> the game's content <span class="hljs-keyword">is</span> symbolic <span class="hljs-keyword">in</span> nature. However, I <span class="hljs-keyword">do</span> <span class="hljs-keyword">not</span> define a line <span class="hljs-keyword">in</span> the sand <span class="hljs-keyword">for</span> which <span class="hljs-keyword">to</span> be drawn up the boundaries <span class="hljs-keyword">of</span> the supernatural, <span class="hljs-keyword">or</span> the gas, <span class="hljs-keyword">or</span> the artificial, <span class="hljs-keyword">or</span> such, <span class="hljs-keyword">and</span> I <span class="hljs-keyword">do</span> <span class="hljs-keyword">not</span> believe that these are the only two explanations.
+        
+            I have taken notes <span class="hljs-keyword">on</span> many <span class="hljs-keyword">of</span> these commentaries, <span class="hljs-keyword">as</span> well <span class="hljs-keyword">as</span> reasoned many ideas <span class="hljs-keyword">in</span> my head, <span class="hljs-keyword">and</span> I have felt naturally compelled <span class="hljs-keyword">to</span> state these ideas <span class="hljs-keyword">on</span> paper. You must note that I am <span class="hljs-keyword">not</span> a scientist, I am <span class="hljs-keyword">not</span> a philosopher, although I <span class="hljs-keyword">do</span> look <span class="hljs-keyword">into</span> that <span class="hljs-keyword">for</span> leisure, I am a cartographer, an amateur historian, a writer, a typographer, <span class="hljs-keyword">and</span> a web developer. <span class="hljs-keyword">Not</span> exactly the <span class="hljs-keyword">type</span> you would look <span class="hljs-keyword">for</span> analyzing data. However, it doesn't seem like the community <span class="hljs-keyword">has</span> a better alternative, nor any analyzers <span class="hljs-keyword">to</span> put about ideas like this. Oh, I'm also <span class="hljs-number">14</span>, so cut me some slack <span class="hljs-keyword">on</span> these fields, but constructive criticism <span class="hljs-keyword">is</span> encouraged. Just keep stuff civil <span class="hljs-keyword">in</span> the comments section below. Also, this post <span class="hljs-keyword">is</span> a lengthy one, so I would advise you <span class="hljs-keyword">to</span> <span class="hljs-keyword">read</span> it over multiple sessions. <span class="hljs-keyword">If</span> you choose <span class="hljs-keyword">to</span> <span class="hljs-keyword">continue</span> reading, <span class="hljs-keyword">and</span> have <span class="hljs-keyword">not</span> played the game, please play it now, <span class="hljs-keyword">as</span> there will be spoilers ahead, which <span class="hljs-keyword">is</span> natural <span class="hljs-keyword">on</span> a paper like this. I cannot emphasize the importance <span class="hljs-keyword">of</span> keeping the story unspoiled enough, so please make sure that your playthrough <span class="hljs-keyword">is</span> fresh.
+        <a id = "introduction"></a>
+        <p><strong>Introduction:</strong></p>
+        <p>Keep in mind when reading this essay that all of us have an inherent bias for certain ideas. I have tried my best to eliminate such bias, but certain ideas are drastically dis-represented, and should have more documentation in this document. I will continue to elaborate on these ideas in order to make sure that the gap becomes ever smaller. But like Zeno's paradox, I sincerely doubt that the gap of bias will ever be bridged.</p>
+        <p>So, I wouldn't go so far as to declare these theories, but these are some ideas, and the background information that can be deduced from these ideas. Whenever I go into a game like this, I want to know the specific background information behind these fictional worlds, and to piece it together. In Night in The Woods, however, things seem rather generic, and particular names of characters are usually not mentioned with rare exceptions. So, to piece it together, as say, a history book would tell you, is rather difficult, however we can make some inferences from the textual information provided to us in the game. I've split these into eightfields, with relevant sub-fields in between.</p>
+        <p>The main purpose of this post is to provide background-information that is not heavily influenced by the plot, or for the sole purpose of the plot, but rather as a background for the game itself.</p>
+        <a id = "contents"></a>
+        <p><strong>Table of Contents:</strong></p>
+        <ol>
+        <li><p><strong>-- Setting of the Game</strong></p>
+        </li>
+        <li><p><a href = "#deducing-time" class = "content-link">Deducing Time</a></p>
+        </li>
+        <li><p><strong><a href = "#history" class = "content-link">-- History</a></strong></p>
+        </li>
+        <li><p><a href = "#local-history" class = "content-link">Local History</a></p>
+        </li>
+        <li><a href = "#global-history" class = "content-link">Global History</a></li>
+        <li><p><a href = "#deduction-of-surnames" class = "content-link">Deduction of Surnames</a></p>
+        </li>
+        <li><p><strong>-- Prehistory</strong></p>
+        </li>
+        <li><p><a href = "#creationism" class = "content-link">Creationism</a></p>
+        </li>
+        <li><p><a href = "#evolutionary" class = "content-link">Evolutionary</a></p>
+        </li>
+        <li><p>Evolution of Animals</p>
+        </li>
+        <li><p><a href = "#localized" class = "content-link">Localized</a></p>
+        </li>
+        <li><p><a href = "#globalized" class = "content-link">Globalized</a></p>
+        </li>
+        <li><p><a href = "#post-apocalyptic" class = "content-link">Post-apocalyptic</a></p>
+        </li>
+        <li><p><a href = "#geography" class = "content-link"><strong>-- Geography</strong></a></p>
+        </li>
+        <li><strong><a href = "#theology" class = "content-link">-- Theology</a></strong></li>
+        <li><p><strong><a href = "#philosophy-and-moral-values" class = "content-link">-- Philosophy and Moral Values</a></strong></p>
+        </li>
+        <li><p><a href = "#anthropomorphic-creatures" class = "content-link">Anthropomorphic Creatures</a></p>
+        </li>
+        <li><a href = "#internal-perspective" class = "content-link">Internal Perspective</a></li>
+        <li><p><a href = "#dreams" class = "content-link">Dreams</a></p>
+        </li>
+        <li><p><strong><a href = "#paranormal-occurrences" class = "content-link">-- Paranormal Occurrences (Mostly to do with the main plot of the game.)</a></strong></p>
+        </li>
+        <li><p>-Poison Gas</p>
+        </li>
+        <li><p><a href = "#maple-street" class = "content-link">Maple St.</a></p>
+        </li>
+        <li><p><a href = "#in-the-mine" class = "content-link">The Mine.</a></p>
+        </li>
+        <li><p><a href = "#supernatural-creatures" class = "content-link">Supernatural Creatures</a></p>
+        </li>
+        <li><a href = "#lead-poisoned-water" class = "content-link">Lead/Poisoned Water</a></li>
+        <li><a href = "regular-disorders-related-mental-disorders" class = "content-link">Regular Disorders/Related Mental Disorders</a></li>
+        <li><p>Other Ideas</p>
+        </li>
+        <li><p><strong><a href = "#other-ideas" class = "content-link">-- Possible Solutions/Discarding of Evidence</a></strong></p>
+        </li>
+        <li><strong><a href = "#conclusion-and-my-opinion" class = "content-link">-- Conclusion and My Opinion</a></strong></li>
+        </ol>
+        <p><strong>Setting of the Game:</strong></p>
+        <ul>
+        <a id = "deducing-time"></a>
+        <li><p><strong></strong> Deducing Time:</p>
+          The game <span class="hljs-keyword">is</span> known <span class="hljs-keyword">to</span> take place <span class="hljs-keyword">in</span> Western Pennsylvania, <span class="hljs-keyword">and</span> <span class="hljs-keyword">the</span> game alludes <span class="hljs-keyword">to</span> this <span class="hljs-keyword">in</span> numerous ways (e.g. Coal Mines, Heavy Manufacturing, <span class="hljs-keyword">or</span> Economic Stagnation). Which part <span class="hljs-keyword">of</span> Western Pennsylvania can be explained via <span class="hljs-keyword">the</span> revelation <span class="hljs-keyword">of</span> certain geographical features within textual evidence. The game<span class="hljs-comment">'s geography will be explained in the geographical section of this post.</span>
+        
+          The setting <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> game, <span class="hljs-keyword">or</span> <span class="hljs-keyword">at</span> least <span class="hljs-keyword">its</span> <span class="hljs-built_in">date</span>, can be explained via two sources.
+        </li>
+        <li><p>Harfest [Harvest Festival] (or Halloween). This is virtually guaranteed to take place on October 31st, due to its allusion to the real-life holiday.</p>
+        </li>
+        <li>Bea mentions during the Library-Microfiche episode that the game takes place in 2016, as upon passing the computers on the second floor, she will state:</li>
+        </ul>
+        <p>"Bob Targg. Born 1966. 50 years old." In this statement, there is no approximation whatsoever as to the age of him, and thus, we can infer that the game takes place in 2016. This would also make sense development-wise, as the bulk of the scenes would most likely have been developed around this timepoint in real life.</p>
+        <p>The Harvest Festival, or also known as Halloween/Harfest, takes place on Day 4 of Part 2: Weird Autumn. By backtracking, we can figure out that the exact time Mae gets drunk is 27 October, 2016, 8:50 PM, EST. By backtracking even further, we figure out that Mae most likely came home on 24-25 October, 2016. We can use the dawn and dusk times of this particular date to figure out the approximate hours of when Mae came home. It is likely that Mae came home on 24 October, as her father is still on the couch, and although a late-nighter, would still have gone to sleep around midnight. This means that Mae, could have at latest come home at 8:45 PM, thus, we must presume that Mae came home from 1845 hours, 24 October, 2016, Eastern Standard Time to 100 hours, 25 October, 2016, Eastern Standard Time. Thus, the game takes place from 8:45-12:00 PM, 24 October 2016 (or) 12:00 AM-1:00 PM, 25 October 2016, Eastern Standard Time until the end of the game, presumably, 5:30 PM, 4 November 2016, Eastern Standard Time. (This is gotten from a cutscene on the Day 2 of Home Again).</p>
+        <p>We can whittle down the timestamps even further, as on cutscene(s) on Day 2 of Home Again to Day 1 of Weird Autumn, Candy Borowski states that Mae sleeps around ten hours a day ("I mean more than the ten hours or so you already get?"), and that it was 4:00 PM (1600 hours) when Mae held the conversation with her. If we take this at face value, we can assume that Mae actually began sleeping at 6:00 AM. This, again, is possible, as Mae's father might actually be an early bird instead of a late-nighter, and thus be watching shows in the morning. This would place Garbo and Malloy's timestamp to be even more unfavorable than most late-night comedy shows, which is expressed in one of the episodes ("I just hope anybody's watching at this time slot!"). 6:00 AM is actually a plausible time, as it would still be dark outside, and dawn doesn't come until 7:10 AM. If this approach is taken, the game stretches from 5:50 AM on 25 October, 2016, Eastern Standard Time, to 5:30 PM on 4 November, 2016, Eastern Standard Time. 4 November in the United States, however, is also the day Daylight Saving ends. This would mean that the end of the game is actually on 6:30 PM, 4 November, 2016, EST. The geographical setting of the game will be revealed in the Geography section.</p>
+        <a id = "history"></a>
+        <p><strong>History:</strong></p>
+        <ul>
+        <a id = "local-history"></a>
+        <li><strong></strong> (I.) Local History:</li>
+        </ul>
+        <p><strong>Note</strong> : I believe in Occam's Razor, but unfortunately hypotheses and assumptions must be made in the face of incomplete sources. Thus, many things are presumed, and artificially emulated. If you have other ideas, let me know in the comments.</p>
+        <p>The town'his was later reflected during Social Policies during the 1920s, which can be found out about in the Microfiche (Sound Off! Opinion Line)</p>
+        <p>In the 1920s, the Deep Hollow Hollerers were formed, a four-man band, composed of a saxophonist, accordionist, a tubist, and a violinist, the same musicians in Mae's dreams. We can assume that they were quire influential in the town's history and culture, playing in the upper floor stage, which can eventually by found by the player via the 1063 apartment. Eventually, as they began to age, they began to play outside in the woods, assuming they were playing for spirits, and eventually began to talk about leaving their physical bodies to do so. In November 1949, they were found frozen to death in the woods in Deep Hollow Country
+        <p>It is not known whether the Great Depression took place in this timeline, as it is never mentioned and there were no sizeable impacts in America. It must be presumed to be a mainly European event in this timeline, as World War II still happened, and fascism still rose in Germany. This would require that the October 1929 Wall Street Crash somehow managed to rebound in American markets as consumers and businesses both began pursuing a policy of economic isolationism/mercantilism (which, in this case, would have been necessary for the economy to continue, or it could have been propped up via government bail-outs/subsidies or even temporary state capitalism).</p>
+        <p>On 7 December 1941, Japan attacked Pearl Harbor. The following morning, the United States of America declared war on the Imperial Japanese Empire. In order to gather even more soldiers, women were eventually allowed into the draft pool, and the Selective Service law was changed. (In game, Mae states that she could potentially be drafted if you check out the War Monument often enough. In real life, only male citizens of the United States over the age of 18 must register for the draft. This law was presumably changed during the Second World War, as the First World War was too short to allow this Congressional change, and proxy wars weren't large enough for this change.) On 2 September, 1945, the Axis Powers surrendered to the Allied Powers, and the Cold War began. It was around this time that the Possum Springs/Deep Hollow County/Western Pennsylvania reached its peak a couple years later.</p>
+        <p><strong>Peak and Fall (1945-Present)</strong></p>
+            <span class="hljs-keyword">In</span> November <span class="hljs-number">1949</span>, the town's most famous band, the Deep Hollow Hollerers froze <span class="hljs-keyword">to</span> death <span class="hljs-keyword">in</span> Deep Hollow County, Pennsylvania. <span class="hljs-keyword">In</span> the <span class="hljs-number">1950</span>s, Possum Springs likely reached its peak. Living standards were at its highest, <span class="hljs-keyword">and</span> this <span class="hljs-keyword">is</span> the time the majority <span class="hljs-keyword">of</span> more senior/established characters <span class="hljs-keyword">in</span> Night <span class="hljs-keyword">in</span> the Woods grew up <span class="hljs-keyword">in</span>, likely including Mae's father, Stan Borowski. At latest, the trolley would have been opened <span class="hljs-keyword">to</span> the mine <span class="hljs-keyword">in</span> <span class="hljs-number">1967</span> (this <span class="hljs-keyword">is</span> deduced <span class="hljs-keyword">as</span> the longest worker <span class="hljs-keyword">in</span> the trolleys worked <span class="hljs-number">25</span> years, whereas it would have been likely <span class="hljs-keyword">for</span> him <span class="hljs-keyword">to</span> work longer <span class="hljs-keyword">if</span> the trolley was older, <span class="hljs-keyword">and</span> the mine closed <span class="hljs-keyword">in</span> <span class="hljs-number">1991</span> <span class="hljs-keyword">or</span> <span class="hljs-number">1992</span>. Cult Leader: ["<span class="hljs-number">1992</span> <span class="hljs-keyword">or</span> so some men [criminals] <span class="hljs-keyword">from</span> West Mine"]). Entering <span class="hljs-keyword">into</span> the <span class="hljs-number">1970</span>s, however, the peak living standard began <span class="hljs-keyword">to</span> wane. The OPEC Embargo, manufacturing improvements <span class="hljs-keyword">in</span> technology, Three Mile Island (this <span class="hljs-keyword">event</span> may <span class="hljs-keyword">not</span> have happened <span class="hljs-keyword">in</span>-game), <span class="hljs-keyword">and</span> the rise <span class="hljs-keyword">of</span> crime began <span class="hljs-keyword">to</span> <span class="hljs-keyword">take</span> a toll <span class="hljs-keyword">on</span> Possum Springs. <span class="hljs-keyword">By</span> the <span class="hljs-number">1980</span>s, the town was beginning <span class="hljs-keyword">to</span> face a major crisis. (This could also be a plausible reason <span class="hljs-keyword">for</span> why Stan switched so many jobs). <span class="hljs-keyword">With</span> further technologies being invented <span class="hljs-keyword">to</span> replace the <span class="hljs-keyword">old</span>-school mines, the mines around Possum Springs began <span class="hljs-keyword">to</span> close. <span class="hljs-keyword">On</span> <span class="hljs-number">4</span> September, <span class="hljs-number">1991</span>, <span class="hljs-number">1800</span> hours, the last trip <span class="hljs-keyword">from</span> the mine <span class="hljs-keyword">to</span> the trolley station was made, <span class="hljs-keyword">and</span> the mine inspector carved his initials <span class="hljs-keyword">and</span> date <span class="hljs-keyword">into</span> the door at <span class="hljs-number">6</span>:<span class="hljs-number">30</span> PM, <span class="hljs-number">4</span> September, <span class="hljs-number">1991</span>, Eastern Standard Time. <span class="hljs-keyword">From</span> <span class="hljs-number">4</span> November <span class="hljs-number">1995</span>-<span class="hljs-number">25</span> August <span class="hljs-number">1996</span>, Mae was born. (This <span class="hljs-keyword">is</span> deduced through the game's timestamps, <span class="hljs-keyword">and</span> Bea being twenty, <span class="hljs-keyword">with</span> corresponding dialogue <span class="hljs-keyword">in</span> which Mae says she <span class="hljs-keyword">is</span> older than her <span class="hljs-keyword">by</span> two months.) <span class="hljs-keyword">In</span> <span class="hljs-number">1998</span>, a large flood hit Possum Springs, (this <span class="hljs-keyword">is</span> fictional, <span class="hljs-keyword">as</span> there was no major flood <span class="hljs-keyword">in</span> Western Pennsylvania <span class="hljs-keyword">in</span> <span class="hljs-number">1998</span>). The flood mentioned at the beginning <span class="hljs-keyword">of</span> the game <span class="hljs-keyword">as</span> being "the largest flood since <span class="hljs-number">1998</span>", <span class="hljs-keyword">is</span> likely the <span class="hljs-number">2006</span> Mid-Atlantic United States Flood. This means that Mae's grandfather must have died <span class="hljs-number">25</span> June-<span class="hljs-number">5</span> July <span class="hljs-keyword">of</span> December <span class="hljs-number">2006</span>. <span class="hljs-keyword">In</span> December <span class="hljs-number">2010</span>, the "Great Blizzard <span class="hljs-keyword">of</span> <span class="hljs-number">2010</span>" <span class="hljs-keyword">or</span>, <span class="hljs-keyword">in</span> real life, the February <span class="hljs-number">5</span>-<span class="hljs-number">6</span> <span class="hljs-keyword">and</span> the February <span class="hljs-number">25</span>-<span class="hljs-number">27</span> blizzards. There was also a significant storm a few months/days prior <span class="hljs-keyword">to</span> the events <span class="hljs-keyword">of</span> the game, which could be the <span class="hljs-number">2016</span> West Virginia Flood, <span class="hljs-keyword">or</span> a completely fictional <span class="hljs-keyword">event</span>.
+        <ul>
+        <a id = "global-history"></a>
+        <li><strong></strong> (II.) Global History:</li>
+        </ul>
+        <p><strong>Note:</strong> Global History can be inferred via various dialogues and supplemental games. Although rather rare, global history segments, (e.g Pope Rubello, Second World War) do pop up occasionally. Here's a list of major events confirmed, or presumed in-game that has an impact on the world. (Ordered chronologically).</p>
+        <p><strong>Ancient:</strong></p>
+        <ul>
+        <li><strong>--</strong> Polytheism (Night in The Woods) (Based off Christianity, but is Polytheistic, does not use the Cross, and uses They and God interchangeably. More in Theology.) Unknown</li>
+        <li><strong>--</strong> Forest God (Lost Constellation) (May be based off Germanic-Slavic folk tales?) 1000 BC-200 BC</li>
+        <li><strong>--</strong> Forest Mythology (Lost Constellation) (Adina Astra may be based off the Wise Men in the Bible (e.g. A far off astronomer from the East coming to view a "Ghost Star")) 1-5 AD</li>
+        </ul>
+        <p><strong>Medieval:</strong></p>
+        <ul>
+        <li><strong>--</strong> Founding of Kievan Rus/Poland (Night in The Woods) (Borowski? Chazokov? No?) 900-1300 AD</li>
+        <li><strong>--</strong> Rubello (Night in The Woods) (Likely based on corrupt "breathe fire/eat people" popes prior to the Protestant Reformation) 1400 AD-1499 AD</li>
+        <li><strong>--</strong> French Victory of the Hundred Years' War (Night in The Woods) ("All fancy and French" - Gregg, stating that France managed to survive British influence) 1453 AD</li>
+        <li><strong>--</strong> Discovery of the New World (Night in The Woods) (Isn't the existence of Possum Springs enough to know that this happened? We don't know whether Leif Erikson existed in this timeline, though.) 1492 AD</li>
+        </ul>
+        <p><strong>Colonial:</strong></p>
+        <ul>
+        <li><strong>--</strong> Colonial Settlements in the New World (Night in The Woods) (Bright Harbor, and Possum Springs itself are pieces of evidence.) 1620 AD-1781 AD</li>
+        <li><strong>--</strong> Revolutionary War (Night in The Woods) ("How old we talking? Like Revolutionary War Era?" – Angus, implying that the Revolutionary War happened.) 1775 AD-1781 AD</li>
+        <li><strong>--</strong> Latin American Revolutionary Wars (Night in The Woods) ("Simone lived in a good land, but under every good land are the roots of tyranny." – Mr. Chazokov. This also implies that an allegory for Simon Bolivar exists in this world.) 1807-1825 AD</li>
+        <li><strong>--</strong> Napoleonic Wars (Night in The Woods) (Borowski could be a reference to the Battle of Borodino, the largest battle of the Napoleonic Wars) 1798 AD-1815 AD</li>
+        </ul>
+        <p><strong>Victorian:</strong></p>
+        <ul>
+        <li><strong>--</strong> Mexican Cession/Mexican-American War of 1848 (Night in The Woods) ("Some night I will catch a bus out to the West Coast. And burn their silicon city (allegory for San Jose?) down to the ground." – Selmers, implying that it did happen. (This also isn't possible if the Mexican Cession didn't happen.)</li>
+        </ul>
+        <p><strong>Second Industrial Revolution:</strong></p>
+        <ul>
+        <li><strong>--</strong> Civil War (Night in The Woods) ([Arnold A. Applebaum] Economic progress after post-Civil War. Economic progress involving hyper-capitalists would not have been possible if not for the Civil War.) 1861 AD-1865 AD</li>
+        <li><strong>--</strong> Unification of Germany (Night in The Woods) (Gregg owns a Pickelhaube. And Mae says it's a "fascist hat". What more do you need?) 1871 AD.</li>
+        <li><strong>--</strong> Franco-Prussian War (Night in The Woods) (With the existence of the unification of Germany, it would also be clear that the Franco-Prussian war would have happened, and this would also have been a necessary stepping stone to World War I.) 1871 AD</li>
+        <li><strong>--</strong> Homestead Strike (Night in The Woods) (Here it's the Stafford Strike though.) 1889 AD</li>
+        <li><strong>--</strong> Balkan Wars (Night in The Woods) (In order to set World War 1 off a" timescale, the Balkan Wars would also have been necessary.) 1900-1914 AD</li>
+        
+        <p><strong>World Wars:</strong></p>
+        <ul>
+        <li><strong>--</strong> World War I (Night in The Woods) (World War 1 existed in the game. This is made clear by Gregg having a German Pickelhaube, the United States being involved, and Mae's great-great uncle dying overseas in World War 1.) 1914 AD-1918 AD</li>
+        <li><strong>--</strong> Treaty of Versailles (Night in The Woods) (With the conclusion of the war, and Mae yet again remarking "fascist hat", implying the rise of Nazi Germany, it's likely that this treaty did happen.) 1919 AD
+        <li><strong>--</strong> Great Depression (Night in The Woods) (The version of the Great Depression in this war means that it likely didn't affect America, and was mainly a European thing, as it's not mentioned in the library news articles, despite them having articles from the late 1880s to 1940s sorted out on the table.) 1929 AD-1939 AD</li>
+        <li><strong>--</strong> Rise of Fascism (Night in The Woods) ("Fascist Hat" – Mae, implying that the Rise of Fascism did happen.) 1923 AD</li>
+        <li><strong>--</strong> World War II (Night in The Woods) ("No! Wrong War!" – Gregg, stating that World War II also happened in this timeline. How handy this discussion is.) 1939-1945 AD</li>
+        </ul>
+        <p><strong>Cold War to Present:</strong></p>
+        <ul>
+        <li><strong>--</strong> Cold War (Night in The Woods) ("Nuke Possum Springs '85" – Graffiti, painted on top of a building in Towny Centry. This shows that nuclear weapons did exist, which would inevitably lead to a cold war.) 1946 AD-1991 AD</li>
+        <li><strong>--</strong> OPEC Embargo, Vietnam, 70s Crisis (Night in The Woods) ("I'll just join an antiwar group or something. Live out in a trailer in the desert." – Mae, implying the existence of the Vietnam War via the popularity of anti-war groups. The decline of Mae's hometown region is another factor.) 1965 AD-1979 AD</li>
+        <li><strong>--</strong> Reagan Era (Night in The Woods) ("Hey Angyyy! My daddy used to work with your daddy back in the 80s!" – Drunk Mae, implying that things got a little better in the 80s for a while.) 1980 AD-1988 AD</li>
+        <li><strong>--</strong> Late Cold War Scare (Night in The Woods) ("Nuke Possum Springs '85". Most likely picked up popularity during the Late Cold War Scare.) 1985 AD-1991 AD</li>
+        <li><strong>--</strong> End of Cold War (Night in The Woods) ("Probably saw those Nuke Possum Springs signs from way back when." – Aunt Molly, implying that the Nuke signs had been forgotten after 1985, from which we can deduce the End of the Cold War.) 1991 AD</li>
+        </ul>
+        <p><strong>Weird Autumn:</strong></p>
+        <ul>
+        <li><p><strong>--</strong> The Sinking of the Prince of Wales Never Happened. (Night in The Woods) ("So why aren't you off manning a battleship?". Instead of responding that battleships are no longer a thing in the U.S Navy, the Navy recruiter instead goes on to affirm Mae's belief that there are. This could be because the Prince of Wales Sinking never happened, thus never proving that aircraft carriers were better than battleships.)</p>
+        </li>
+        <a id = "deduction-of-surnames"></a>
+        <li><p><strong></strong> (III.) Deduction of Surnames:</p>
+        </li>
+        </ul>
+        <p>Ethnicities do exist in Night in The Woods, and this is visibly shown through surnames (e.g. Borowski, Chazokov, Santello, Delaney, etc.) Via this method, we know that the population of Possum Springs, through random sampling is home to a white majority, being split mainly between Anglo-Franco European and Eastern Slavic, with a Hispanic, Asian minority. Karen Young, the Pastor, could in theory, be Asian-American, and Bea's last name is suggestive of a Hispanic-American minority.</p>
+        <p>Mae's household has the last name "Borowski" denoting an Eastern Slavic blood line on her father's side. I have two ideas for this.</p>
+        <ul>
+        <li><strong></strong> The Borodino Idea:</li>
+        </ul>
+        <p>When I immediately came across Mae's last name, this was what I thought. In this idea, one of Mae's father's relatives served in the Imperial Russian Army during the Napoleonic Wars and saw combat at the Battle of Borodino. A particular event in the battle would have spawned motivation for him enough to the point of legally changing his surname. This would also explain why Mae's family during the 1800s to early 1900s had names relating to war. Arthur, Anselm, etc. This would have placed the Borowskis on a strict timetable though, as they would need to have emigrated to America by 1 January, 1888. The Battle of Borodino took place on 7 September, 1812, and thus the first Borowski could at, earliest, change his surname on 8 September, 1812. This gives the Borowskis 75 years, 3 months, and 24 days with which to emigrate to America. Thus, at most, with this theory, the Borowskis would have only spent 3 or 4 generations in Russia.</p>
+        <ul>
+        <li><strong></strong> The Boris Idea:</li>
+        </ul>
+        <p>The other alternative to the Borodino Idea is the Boris Idea. A quick search for Boro on Behind the Name states that it is a diminutive of Borislav or Boris, most likely the latter if this idea is to be accepted. Borislav, according to the same site is a portmanteau of "battle" combined with "glory", thus meaning "Glory of Battle", or "Battle of Glory".</p>
+        <p>Boris, on the other hand, would refer to Boris I, the Bulgarian King. I will not endorse either of these theories.</p>
+        <p><strong>Prehistory:</strong></p>
+        <ul>
+        <li><p><strong></strong> Note: It is not known how the world was created in this game. It could have been created by the "supernatural" beings in Mae's dreams, or otherwise. However, there are two external dominating theories.</p>
+        </li>
+        <a id = "creationism"></a>
+        <li><p><strong></strong> (I.) Creationism:</p>
+        </li>
+        </ul>
+        <p>This aspect will be explained more in the Theology section. However, it is clear that the Polytheistic Church uses this doctrine, and that they believe that "They" created the world in a finite amount of time. This is not explained in-depth, but it could also be explained via the constellations in Night in The Woods and Longest Night. This would follow the perception of the Mice Writers, the Inventor of Music, and perhaps the Forest God. It is also unknown whether the Forest God is part of an external animistic religion, or whether it is incorporated into Polytheism. (again, this will be explained more in Theology.)</p>
+        <ul>
+        <a id = "evolutionary"></a>
+        <li><strong></strong> (II.) Evolutionary:</li>
+        </ul>
+        <p>If indeed Angus is correct, and this game's prehistory was strictly evolutionary, this would face a number of multiple obstacles. It is clear that normal, as well as anthropomorphic, animals developed.</p>
+        <ol>
+        <li><strong>Evolution of Animals:</strong></li>
+        </ol>
+        <p>First off, we will deal with natural animals. As you might suspect, if this is true, the Cambrian Explosion happened soon after Snowball Earth. It is also known that, eventually, creatures made their way onto land. Dinosaurs, and ancient sharks were among the most prominent species going forward, until they hit the KT Line. This follows the exact same time-table as the theory of Evolution in real life all the way up until 6 mya, and I won't waste your time.</p>
+        <ol>
+        <a id = "localized"></a>
+        <li><strong>Localized:</strong></li>
+        </ol>
+        <p>Now, it's the interesting part. How did anthropomorphic animals develop? If it was a singular species, then how did they all get different heads? If it was multiple species, how did they all get 4 limbs, and a body in the center with a neck? We can divide up the species in Night in the Woods, or classify them as following.</p>
+        <ul>
+        <li>Reptiles</li>
+        <li>Avian</li>
+        <li>Mammals</li>
+        </ul>
+        <p>-Reptiles, of which it seems only crocodiles/alligators seem to exist, would have evolved intelligence. (e.g. Bea or Adina Astra). To further this, they would have to have had taken an entirely different approach to natural selection.</p>
+        <p>-Avian, which would have eventually needed to grow larger heads, lose their wings, and grow their brain size enough to the point where they could communicate normally.</p>
+        <p>-Mammals would have theoretically had the easiest route, as they already had four limbs, and a head large enough for mental capabilities of this size.</p>
+        <p>Or do they? In the localized idea, humanoid formats had evolved long before the six-million-year mark, and perhaps as little as ten million years after the KT Line. They would have, eventually, evolved the capability to spread around the world. As the name suggests, Ice Ages would eventually have isolated pockets of them, perhaps long enough for them to evolve differently, shaping their heads to the various food sources and competition of the region. This, is unlikely, but it's really the only chance you have if you want to explain it evolutionary-wise. Eventually, they would have evolved heads the shapes of Avian, Mammal, or Reptilian creatures, thus allowing for the same humanoid format and anthropomorphic values, while at the same time, having different heads.</p>
+        <p>This note would be continually reinforced; however, it does not solve the problem of early social/inter-species stigmas, and might even exacerbate the problem further, artificially propagating it into massive primitive wars between species, which would speed up the development of ultra-nationalism, and perhaps a new idea of a sort of, species superiority. This would most likely have been particularly damaging during the World Wars, and might have even occurred before then as one species might view another species as inferior, wiping them out on a scale untold in our own timeline. This would hinder technological development, and this is a major barrier to overcome for anthropomorphic theories. This issue, could, however, be solved, or further inflated by religion.</p>
+        <p>For other explanations, see Philosophy and Moral Values, i. Anthropomorphic Creatures.</p>
+        <ol>
+        <a id = "globalized"></a>
+        <li><strong>Globalized:</strong></li>
+        </ol>
+        <p>This is the traditional evolutionary theory in universes involving anthropomorphic creatures. In this idea, animals of all three types (Avian, Mammal and Reptilian) would have been tightly packed together, eventually forming limbs, but the area would still be diverse enough as to allow for their already accustomed food sources. Eventually, the area, (they could be trapped in by an ice-age, by continental drift, or any other geological event, for that matter, all that matters is for them to be contained for a certain duration of time), would shrink to the point where they did not need their food sources any more, and so evolved longer arms and legs. After this, they would eventually have had an interglacial period in which they would have spread out worldwide, in an evolutionarily short time span.</p>
+            Furthermore, even <span class="hljs-keyword">after</span> their initial breakout <span class="hljs-keyword">after</span> <span class="hljs-keyword">the</span> "separation" period (continental drift, ice age, etc.), they would <span class="hljs-keyword">then</span> have <span class="hljs-keyword">to</span> overcome social stigmas, <span class="hljs-keyword">and</span> views <span class="hljs-keyword">of</span> inferiority upon fellow intelligent species. This would have <span class="hljs-keyword">to</span> be done <span class="hljs-keyword">in</span> an efficient manner, otherwise you could <span class="hljs-keyword">end</span> up <span class="hljs-keyword">with</span> a possible genocide <span class="hljs-keyword">on</span> your hands. Even worse, there would be little benefit <span class="hljs-keyword">for</span> a huge variety <span class="hljs-keyword">of</span> species <span class="hljs-keyword">to</span> live together, <span class="hljs-keyword">as</span> numerically, <span class="hljs-keyword">it</span> would <span class="hljs-keyword">not</span> be sustainable, <span class="hljs-keyword">and</span> thus, <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> early days, <span class="hljs-keyword">it</span> <span class="hljs-keyword">is</span> likely <span class="hljs-keyword">that</span> bands <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> same species would eventually conglomerate, unavoidably, forming different social stigmas <span class="hljs-keyword">and</span> cultures <span class="hljs-keyword">that</span> would be <span class="hljs-keyword">set</span> <span class="hljs-keyword">in</span> stone <span class="hljs-keyword">for</span> their particular species. This would lead <span class="hljs-keyword">to</span> a prime breeding ground <span class="hljs-keyword">for</span> animals <span class="hljs-keyword">to</span> go <span class="hljs-keyword">on</span> bloody excursions, seeking <span class="hljs-keyword">to</span>genocide <span class="keyword">the</span> other anthropomorphic animals <span class="hljs-keyword">on</span> <span class="hljs-keyword">the</span> opposite <span class="hljs-keyword">end</span>.
+        
+            This would be further reinforced during <span class="hljs-keyword">the</span> ancient days, <span class="hljs-keyword">or</span> when religion comes <span class="hljs-keyword">about</span>, because <span class="hljs-keyword">it</span> could be further radicalized <span class="hljs-keyword">and</span> revolving <span class="hljs-keyword">around</span> a certain species. This would undoubtedly <span class="hljs-keyword">put</span> <span class="hljs-keyword">the</span> anthropomorphic world <span class="hljs-keyword">in</span> ever more danger, <span class="hljs-keyword">as</span> warfare <span class="hljs-keyword">and</span> weapons became ever more destructive,<span class="hljs-keyword">and</span> they would have <span class="hljs-keyword">to</span>overcome these challenges <span class="hljs-keyword">if</span> they wanted <span class="hljs-keyword">to</span> <span class="hljs-keyword">get</span> anywhere. This would lead <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> peak danger <span class="hljs-keyword">of</span> ultra-nationalism stretching <span class="hljs-keyword">from</span> <span class="hljs-keyword">the</span> Victorian Era <span class="hljs-keyword">to</span> <span class="hljs-word">the</span> <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the Cold War, <span class="hljs-keyword">and</span> which would undoubtedly, divide society apart <span class="hljs-keyword">into</span> separate classes <span class="hljs-keyword">of</span> species. This, however, <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> rendered <span class="hljs-keyword">in</span>-game, so <span class="hljs-keyword">to</span> an extent I doubt whether this <span class="hljs-keyword">is</span> <span class="hljs-keyword">the</span> case.
+        
+            On <span class="hljs-keyword">the</span> flip side, Angus during <span class="hljs-keyword">the</span> Possum Jump hangout, talks <span class="hljs-keyword">to</span> Mae <span class="hljs-keyword">about</span> <span class="hljs-keyword">the</span> pre-historic days when they lived <span class="hljs-keyword">in</span> caves. He often refers <span class="hljs-keyword">to</span> them <span class="hljs-keyword">as</span> "We", a fact <span class="hljs-keyword">that</span> appears <span class="hljs-keyword">to</span> divide <span class="hljs-keyword">the</span> gap, suggesting <span class="hljs-keyword">that</span> <span class="hljs-keyword">it</span> might be possible <span class="hljs-keyword">that</span> certain stigmas were eventually erased early <span class="hljs-keyword">on</span> via a process <span class="hljs-keyword">of</span> natural selection, <span class="hljs-keyword">as</span> <span class="hljs-keyword">it</span> <span class="hljs-keyword">is</span> possible <span class="hljs-keyword">that</span> entire species, <span class="hljs-keyword">or</span> perhaps even groups <span class="hljs-keyword">of</span> species. Natural selection <span class="hljs-keyword">and</span> survivability rates could, perhaps, thus determine <span class="hljs-keyword">that</span> these species eventually managed <span class="hljs-keyword">to</span> <span class="hljs-keyword">get</span> along together. (Why don<span class="hljs-comment">'t we see anyone besides avians, mammals, and reptiles, the latter of which we only see crocodiles/alligators?)</span>
+        <p>Then, again, they don't have to represent species.</p>
+        <p>Again, I do not endorse any of these ideas, and I don't seek to prove, I seek to inform.</p>
+        <ul>
+        <a id = "post-apocalyptic"></a>
+        <li><strong></strong> Post-Apocalyptic:</li>
+        </ul>
+        <p>Originally, this was started as a joke and as such, still does not have much merit. However, it still is an idea worth sharing. The idea is that in a radioactive/nuclear war, (perhaps using less physically destructive bombs, such as neutron/cobalt bombs?), humans died off, and with the new spike in radiation, DNA would have been cut and spliced, perhaps enough to the point of which animals became intelligent. However, the problem is that exposure to radiation is nearly always negative, and does not grow you into Superman or Einstein. Furthermore, radiation only damages DNA, and what DNA it damages is indiscriminate. So, while it might destroy or interfere with animal hormones regulating the size of their head, or their pre-birth growth, it also stands to reason that they would suffer near or complete total organ failure before they were even born.</p>
+        <p>However, this idea does explain that some of the supernatural themes in the game could be the result of radiation poisoning, perhaps a hereditary disorder passed on from one's parent, which could be descended over many generations. This would explain some of the artwork, and constellations, such as the Black Goat for instance, which isn't solely in Mae's mind or the cultists, but also found at the Shreigeist House, or the Historical Society as a painting in the attic.</p>
+        <a id = "geography"></a>
+        <p><strong>Geography</strong></p>
+        <p><strong></strong> Local Geography in Night in The Woods is completely fictional, or the place names are at least. It is important to note particular candidates/allegories. I have included everything that has not evaded my view of thought.</p>
+        <ul>
+        <li><strong></strong> Bright Harbor:</li>
+        </ul>
+        <p>Bright Harbor is a major city, likely housing hundreds of thousands of inhabitants, or even, in this game, one of America's largest cities. There are two main in real-life candidates for Bright Harbor. I also contemplated Erie and Harrisburg, but have decided those are too small.</p>
+        <ol>
+        <li><strong>Pittsburgh:</strong></li>
+        </ol>
+        <p><strong>-</strong> It is completely possible for Bright Harbor to be an allegory to Pittsburgh. This would be supported via the Chattrbox icon, the purple strawberry at the top, which shouts "Bright Harbor Gazette." As Possum Springs is in Western Pennsylvania, it would be likely that this newspaper would be in a major city in Western Pennsylvania with enough radial influence. This would point out Pittsburgh. However, there isn't really much more evidence going for it, and unfortunately it has the word "Harbor" in it. Although, of course, this could refer to an inland city as well, though unlikely.</p>
+        <ol>
+        <li><strong>Philadelphia:</strong></li>
+        </ol>
+        <p><strong>-</strong> However, Philadelphia is another prospect and it has several things going for it. First off, the Chattrbox newspaper might be inaccurate, as old internet services tend to be rather generic, and it's likely that Chattrbox is an old internet service. (e.g. "Germ, you don't even use Messenger" – Mae). This clearly shows that Chattrbox is old, because its other name is Messenger. Even more so, Bright Harbor is nearby, but far away enough to the point where trips to it are pretty rare. To further this claim, in a dialogue text with Lori Meyers, she will reveal that there is a subway in Bright Harbor. Pittsburgh, however, only has a light rail, meaning that it wouldn't have been possible for her to have the urge to push someone off the subway station. Finally, Bright Harbor's name would fit in, as Philadelphia is technically a coastal city. This is the more likely idea, if you ask me.</p>
+        <p><strong>        - Possum Springs and Surrounding Area:</strong></p>
+        <p>Possum Springs is a former mining town in Western Pennsylvania, is all the info we can extract from it. Although we also know that it was home to a coal mine, it sits between a valley on a floodplain, that it's a major agricultural region, and has state forests around it. This places it around roughly eighty miles northeast of Pittsburgh. It is in the Deep Hollow County administrative zone, Pennsylvania, United States of America.</p>
+        <p>To the east, is Saltztown, what is from its name, a major mining town, with primary exports of salt. Its name was probably derived in a similar manner to that of Salzburg, Austria, that is, having salt mines within the town.</p>
+        <p>To the north, is Briddle, which is a town, not much else is known about it. Due to the way Mae seems to hold some importance for it, it could be the county seat?</p>
+        <p>Possum Jump is an influential mountain right next to the state park, and rather high, ending on a sudden cliff, from which one can see nearly all of the county except for Possum Springs, blockaded off by a group of hills/mountains. It is also a major hiking trail and an attraction for tourists and hikers alike to spend their evenings there.</p>
+        <p>Not much else is known about Possum Springs' surrounding area Geography-wise, although the mountains could be an offshoot of the Appalachians. It was also the only way up to the state park, although the highway came in 1998; diverting traffic from Possum Springs, as Possum Springs was at the time, the only route into the state park. However, hikers still visit or come across Possum Springs as seen by the Russian hiker in Weird Autumn.</p>
+        <a id = "theology"></a>
+        <p><strong>Theology:</strong></p>
+            Note: Despite some being confused, it's impossible <span class="hljs-keyword">for</span> the main religion <span class="hljs-keyword">in</span> game <span class="hljs-keyword">to</span> be Christianity, <span class="hljs-keyword">or</span> any sub-variants such <span class="hljs-keyword">as</span> Catholicism, Coptic, Orthodox <span class="hljs-keyword">or</span> Protestant. Pastor Karen <span class="hljs-keyword">and</span> Mae repeatedly refer <span class="hljs-keyword">to</span> God <span class="hljs-keyword">as</span> "they", <span class="hljs-keyword">using</span> the term nearly interchangeably. Thus, it must be presumed that this <span class="hljs-keyword">is</span> a polytheistic religion.
+        
+            The dominant religion <span class="hljs-keyword">in</span> game <span class="hljs-keyword">is</span> un-deniably based off Christianity, <span class="hljs-keyword">and</span> carries many similar traits, particularly that <span class="hljs-keyword">of</span> Roman Catholicism (Pope), <span class="hljs-keyword">as</span> well <span class="hljs-keyword">as</span> aesthetic traits (Stained glass being typically associated <span class="hljs-keyword">with</span> Roman Catholicism despite other churches <span class="hljs-keyword">of</span> different denominations/sects having similar stained-glass windows.)
+        
+            <span class="hljs-keyword">If</span> the Bible <span class="hljs-keyword">is</span> the main accepted holy scripture <span class="hljs-keyword">in</span> this religion, which we shall term "Polytheism", <span class="hljs-keyword">then</span> it would have made sense <span class="hljs-keyword">for</span> the animals <span class="hljs-keyword">to</span> interpret the Bible <span class="hljs-keyword">in</span> this way, <span class="hljs-keyword">as</span> they would eventually have interpreted "<span class="hljs-keyword">in</span> His image" <span class="hljs-keyword">as</span> being <span class="hljs-keyword">of</span> multiple kinds, <span class="hljs-keyword">and</span> thus multiple entities, <span class="hljs-keyword">as</span> there are multiple species <span class="hljs-keyword">in</span> game. Another thing <span class="hljs-keyword">to</span> note <span class="hljs-keyword">is</span> that instead <span class="hljs-keyword">of</span> the cross, there <span class="hljs-keyword">is</span> an eight-pointed star, even though Easter <span class="hljs-keyword">is</span> mentioned <span class="hljs-keyword">in</span> one <span class="hljs-keyword">of</span> the Mallard's Tomb prompts, it's likely it's a stand-<span class="hljs-keyword">in</span> <span class="hljs-keyword">for</span> a different holiday, <span class="hljs-keyword">as</span> the Crucifixion didn't seem <span class="hljs-keyword">to</span> happen <span class="hljs-keyword">in</span> this timeline.
+        
+            It can also be presumed that the stories <span class="hljs-keyword">of</span> Adina Astra, which could be a stand <span class="hljs-keyword">in</span> <span class="hljs-keyword">for</span> the Wise Men, <span class="hljs-keyword">as</span> well <span class="hljs-keyword">as</span> the Forest God have virtually nothing <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> <span class="hljs-keyword">with</span> this religion <span class="hljs-keyword">as</span> they are regarded <span class="hljs-keyword">as</span> "bedtime stories". The eight-pointed star's significance <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> known, although it could theoretically be a stand <span class="hljs-keyword">in</span> <span class="hljs-keyword">for</span> the Ghost Star, <span class="hljs-keyword">or</span> an adaptation <span class="hljs-keyword">of</span> David's Star. However, it <span class="hljs-keyword">is</span> the main symbol <span class="hljs-keyword">of</span> Polytheism. Polytheism <span class="hljs-keyword">is</span> also probably an international religion, existing <span class="hljs-keyword">not</span> just <span class="hljs-keyword">in</span> the United States, but around the world. It <span class="hljs-keyword">is</span> unknown what their particular moral values are, although it can be presumed <span class="hljs-keyword">as</span> being similar <span class="hljs-keyword">to</span> Catholicism. <span class="hljs-keyword">For</span> me, I found this quite interesting, <span class="hljs-keyword">and</span> a couple <span class="hljs-keyword">of</span> playthroughs have pointed <span class="hljs-keyword">out</span> this discrepancy.
+        <a id = "philosophy-and-moral-values"></a>
+        <p><strong>Philosophy and Moral Values:</strong></p>
+            Note: This <span class="hljs-keyword">is</span> the big one. <span class="hljs-keyword">In</span> it we shall discuss Mae's dreams, philosophy <span class="hljs-keyword">as</span> rendered <span class="hljs-keyword">in</span> the game, moral values <span class="hljs-keyword">in</span> general <span class="hljs-keyword">as</span> well <span class="hljs-keyword">as</span> relating <span class="hljs-keyword">to</span> the anthropomorphic animals inside <span class="hljs-keyword">of</span> the game, <span class="hljs-keyword">and</span> the representation <span class="hljs-keyword">of</span> different kinds <span class="hljs-keyword">of</span> species. Existentialism also appears <span class="hljs-keyword">to</span> be the driving force <span class="hljs-keyword">of</span> philosophy <span class="hljs-keyword">in</span> the game.
+        
+            <span class="hljs-keyword">As</span> existentialism <span class="hljs-keyword">is</span> the driving term <span class="hljs-keyword">in</span> the game, the majority <span class="hljs-keyword">of</span> philosophical aspects can be summed up <span class="hljs-keyword">in</span> the phrase: <i>ex nihilo omnia, ex omnia nihilo</i> (<span class="hljs-keyword">From</span> nothing, everything; <span class="hljs-keyword">from</span> everything, nothing.) This <span class="hljs-keyword">is</span> particularly showcased <span class="hljs-keyword">in</span> Mae's dream <span class="hljs-keyword">with</span> the Sky Cat, <span class="hljs-keyword">in</span> which he continually refers <span class="hljs-keyword">to</span> "monstrous existence". He also states that there <span class="hljs-keyword">is</span> "a hole <span class="hljs-keyword">in</span> the center <span class="hljs-keyword">of</span> everything". However, we shall first deal <span class="hljs-keyword">with</span> the issue <span class="hljs-keyword">of</span> anthropomorphic creatures <span class="hljs-keyword">and</span> the moral values they seem <span class="hljs-keyword">to</span> hold.
+        <ul>
+        <a id = "anthropomorphic-creatures"></a>
+        <li><strong></strong> Anthropomorphic Creatures:</li>
+        </ul>
+        <p>Anthropomorphic Creatures in the game view themselves, as humans (Lori Meyers: "The human soul"). Thus, they treat each other as equals, and given their surnames, we cannot say that they are of different ethnicities, or that certain ethnicities relate to certain species of animals in the game. However, we do not have to take them as literal creatures. There are a few discrepancies, although they each have a classical explanation.</p>
+        <ol>
+        <li>Scott Benson declared that they were humans when asked about Lori's dialogue.</li>
+        </ol>
+        <p>"Anon: Lori said that the little metal guy 'represents the human soul.' Does this mean they also have humans in their world or…?</p>
+        <p>Scott: They are humans, but humans don't have souls either."</p>
+        <p>Counter: However, it should be noted that this could mean that they see all intelligent creatures as humans, instead of separate animals.</p>
+        <ol>
+        <li>The Harleys. The Harleys consist of multiple species of animals from all three types, Avian, Reptilian, and Mammalian. This would mean that, if they were biologically attained, the personality idea is an option.</li>
+        </ol>
+        <p>Counter: Unfortunately, though, it can also be taken that the Harleys are adopted.</p>
+        <ol>
+        <li>If you pay attention to the Telezoft conversation in which the wolf is annoyed about the "*BING*" Noise, you can notice that the cat next to her is her husband, as he repeatedly refers to her as "honey" and they are around the same age. It is not known, however, if they have kids.</li>
+        </ol>
+        <p>Counter: In this universe, marrying across species could be seen as the equivalent of interracial marriage. However, if that were the case, and it were the exact equivalent, it's also possible that they would be able to have children, which leads to the personality idea.</p>
+        <ul>
+        <li><strong></strong> The Classical Explanation:</li>
+        </ul>
+        <p>The Classical Explanation is simple. This would have been the dominating concept in other stories involving anthropomorphic animals, such as Busytown, the Jungle Book, and the Wind in The Willows. Like Busytown (which was quoted as being one of the inspirations of Night in The Woods), families are only able to have kids of their same species, and to evolutionary-wise, marry their own species. The Classical approach is to keep the order of nature as it is in real life, except apply that to animals and make them intelligent. However, it can also be noted that this would mean that certain relationships would have to be artificially attained, and that it might be hard for families to continue their lineage in this manner. However, in other stories involving anthropomorphic animals, different species of animals do not intermarry. However, it can also be noted that Night in The Woods is an unconventional game, thus, this might be possible.</p>
+            It <span class="hljs-keyword">is</span> never explained whether interspecies marriage <span class="hljs-keyword">is</span> morally invalid <span class="hljs-keyword">in</span> the Classical Explanation, although we can assume that it <span class="hljs-keyword">is</span>, due <span class="hljs-keyword">to</span> the fact that nobody <span class="hljs-keyword">in</span> the Classical Explanation <span class="hljs-keyword">is</span> actual practicing this.
+        
+            Furthermore, the Classical Model would work <span class="hljs-keyword">as</span> shown. Given the diverse variety <span class="hljs-keyword">of</span> animals, certain marriages are nearly pre-destined, especially <span class="hljs-keyword">in</span> small towns, (<span class="hljs-keyword">for</span> example: Are there any other foxes, <span class="hljs-keyword">or</span> crocodiles <span class="hljs-keyword">in</span> town besides Gregg <span class="hljs-keyword">and</span> Bea? It's never mentioned <span class="hljs-keyword">in</span> game.) However, <span class="hljs-keyword">if</span> the classical model were <span class="hljs-keyword">to</span> work, it's likely that overall, cities, after reaching a certain point <span class="hljs-keyword">in</span> their population/demographic growth, would have needed less <span class="hljs-keyword">of</span> an organization due <span class="hljs-keyword">to</span> their diversity, since, <span class="hljs-keyword">in</span> the classical model, only animals <span class="hljs-keyword">of</span> the same species may reproduce. The way this could impact smaller, less urban areas <span class="hljs-keyword">on</span> the demographic scale would be particularly fascinating, especially over a long period <span class="hljs-keyword">of</span> time, say generations, decades <span class="hljs-keyword">or</span> centuries. My prediction <span class="hljs-keyword">is</span> that it would eventually conglomerate <span class="hljs-keyword">into</span> towns made up <span class="hljs-keyword">of</span> only a couple <span class="hljs-keyword">of</span> species, <span class="hljs-keyword">with</span> temporary minorities <span class="hljs-keyword">of</span> other species being there <span class="hljs-keyword">for</span> fiscal
+        <ul>
+        <a id = "personality-explanation"></a>
+        <li><strong></strong> The Personality Explanation:</li>
+        </ul>
+        <p>Another interesting candidate that could be used to explain the reason behind anthropomorphic animals in-game (besides they were used to soften up the story, or as an art choice) is that they could represent personalities. For example, most birds are deeply interested in religion (Pastor Kate/Karen, Jeremy Warton's family, Pope Rubello), or that foxes are generally rather adventurous and natural risk-takers (Greggory Lee, Jen (Gregg's cousin), etc.). I'll go into a specific list later on in this section.</p>
+            <span class="hljs-keyword">If</span> the reason animals were used <span class="hljs-keyword">in</span> the storyline was <span class="hljs-keyword">to</span> express the diversity <span class="hljs-keyword">of</span> human beings, this wouldn't be too <span class="hljs-keyword">far</span>-fetched. <span class="hljs-keyword">As</span> ethnicities are already counted (via surnames), the choice <span class="hljs-keyword">of</span> animals would represent a different <span class="hljs-keyword">type</span> <span class="hljs-keyword">of</span> diversity, most likely that <span class="hljs-keyword">of</span> personality. I've already deduced a possible list <span class="hljs-keyword">of</span> animals <span class="hljs-keyword">to</span> personality types which you can see below.
+        <ol>
+        <li>Birds (Religious, Traditionalist, Understanding):</li>
+        <p>Birds in the game, such as Mr. Porch Guy, Jeremy Warton and his family, Pope Rubello and Pastor Karen can all be noted as being all three of these aspects.</p>
+        <p><em>Religious:</em></p>
+        <ol>
+        <li><p>It would appear that nearly all birds are religious in nature. It is not known whether the Janitor or Mr. Porch Guy are religious, but we don't have any evidence to suggest otherwise. Also, Pope Rubello, Pastor Karen/Kate, and Germ's family are all religious.</p>
+        </li>
+        <li><p>In a dialogue option with Germ, he will state that his sisters are all up at the church, and that they go every week.</p>
+        </li>
+        <li>Pastor Karen is a bird. Pastor Karen is a pastor. Not much to be said here.</li>
+        <li>Pope Rubello is also a bird. Pope Rubello is also a pope. Do I have to put anything here?</li>
+        </ol>
+        <p><em>Traditionalist:</em></p>
+        <ol>
+        <li><p>In a dialogue option with Mr. Porch Guy, he will state, "I can legally shoot you for being up here you know.", which applies in the reader's mind that Mr. Porch Guy possesses a firearm, a traditionalist/conservative value.</p>
+        </li>
+        <li><p>Furthermore, Germ's family has refused to move out of the woods for unknown reasons, probably to defend their tradition, and it can be guessed that his family has been living there for multiple generations, although their economic affiliation with the town is unknown.</p>
+        </li>
+        <li>To continue this line, the Janitor seems to be a more traditionalist guy, as his dialogue hints that he is particularly dissatisfied with the bureaucratic government.</li>
+        <li>Lastly, Pope Rubello, a historical figure, does not seem rather appreciative of "heretics", and will "burn" them and "eat" them. This shows the lengths he's willing to go just to make sure that the <em>ancien regime</em> will not get overthrown.</li>
+        </ol>
+        <p><em>Understanding:</em></p>
+        <ol>
+        <li><p>It's clear that the birds are rather understanding people, except, perhaps for Pope Rubello. But Pastor Karen also hints that Pope Rebello's story was rather exaggerated, and, as no one can really breathe fire, this casts the story in doubt. Further examples of understanding are listed below.</p>
+        </li>
+        <li><p>For instance, Mr. Porch Guy does not appreciate you on his porch at first, but will eventually grow to accept you being there.</p>
+        </li>
+        <li>Pastor Kate/Karen seems genuinely concerned about Bruce, the homeless person adjacent to the church building, taking it as far as being willing to open up the library tomb, or the room above Mallard's tomb.</li>
+        <li><p>Germ empathizes with Mae to a certain extent, and knows about the cult. Germ's grandmother can be seen relating to Mae on the last hangout with Germ.</p>
+        </li>
+        <li><p>Crocodiles/Alligators (Depressed, Wishes for a better/imaginary future, Hard workers).</p>
+        </li>
+        </ol>
+        <p>We don't have an exhaustive list of crocodiles/alligators in the game outside of Bea's family, but we do know somewhat about the following characters: Bea's mother, Bea's father, Beatrice Santello, and Astra Adina, the latter being the only known crocodile/alligator outside of Bea's family, although Bea's (friend?) at Math Camp could also, likely, have been a crocodile/alligator.</p>
+        <p><em>Depressed:</em></p>
+        <ol>
+        <li><p>It is not clear why Astra Adina did the things she did, although to some extent, we can figure out that the reason she was hunting for a "Ghost Star" in the first place was because that she felt the stars were "incomplete". This would, then, place the depressed component of this particular species a bit further ahead.</p>
+        </li>
+        <li><p>Astra Adina, the astronomer in mythology, perhaps partly-real, or even non-fictional, might have gone hunting for the Ghost Star because she felt "incomplete". This is also another characteristic of the Wise Men's story in real life. If this is true, it stands to reason that she could have become a bit depressed.</p>
+        </li>
+        <li>Bea's father was mentioned by Bea as having suffered a tremendous nervous breakdown, implying that he was immediately overcome with grief and remained depressed long after, in a "years-long breakdown".</li>
+        <li>Bea herself admits to thinking obsessively about college, and being in a depressed/cold state to the world herself. This is clearly shown, as her greatest fears seem rather mundane to the average listener, despite some functional merit.</li>
+        </ol>
+        <p><em>Wishes for a better/imaginary future:</em></p>
+        <ol>
+        <li><p>Astra Adina was clearly an aspiring astronomer in life, and held enough influence to be told as a widespread mythological myth for thousands of years. Bea clearly wishes for a better future in the dance party hangout, and Bea's father seems to remain hopeful to a degree.</p>
+        </li>
+        <li><p>Astra Adina's wishes for a better future probably helped her rise to the top ranks in the court, as would have been the custom at the time of the legend.</p>
+        </li>
+        <li>Bea clearly wishes for an imaginary future, the future that could have happened, but was denied to her due to external circumstances. She continues to contemplate this imaginary future and thinks about it "obsessively".</li>
+        <li>Bea's father seems to be on the road to recovery, as during the dinner hangout with Bea, her father does not seem to be in a complete mental breakdown state anymore, meaning that something has progressed, a prerequisite of which would have been optimism for the future.</li>
+        </ol>
+        <p><em>Hard workers:</em></p>
+        <ol>
+        <li><p>Another primary characteristic of crocodiles/alligators are that they seem to be hard workers. This is most evident in the story of Astra Adina, where she ventured to far-off lands just to chart down the stars, and through which she was able to acquire an influential position in the King's court.</p>
+        </li>
+        <li><p>Astra Adina, through hard work, was able to rise to the position of head astronomer. As societies back in the day did not appreciate females in court, this would have been rather difficult otherwise.</p>
+        </li>
+        <li>Bea's family has worked hard enough to acquire the store from another family. This is shown as in the newspaper clippings through the library, it appears that another family with a different surname had opened the store. Either way, it would have required work, as if the business was doing successfully, they would have needed to buy it at a high price, and if the business was not doing well, they would have needed to prop it back up.</li>
+        <li><p>Bea is also hardworking. This can be shown throughout multiple chat dialogues and is self-evident, as well as a prominent focal-point for her character.</p>
+        </li>
+        <li><p>Foxes (Cunning, Adventurous, Impulsive/Risk-taking)</p>
+        </li>
+        </ol>
+        <p>There's a reason why the nickname "Fox" applies to highly experienced war commanders who had proven elusive in their careers. (e.g. Swamp Fox, or the Desert Fox). Foxes are generally regarded as a symbol of cunning and adventure, and this can be seen throughout the game, mainly with Gregg and Jen. As there are plenty of species, it is hard to come up with a significant list of species numerically, of which we can track names and personality type.</p>
+        <p><em>Cunning:</em></p>
+        <ol>
+        <li><p>You can see that from Gregg and Jen that both are rather cunning, as they arrange back-end deals (SS), make do with what they have: "You make do *bang bang* with what you got" – Gregg. And attempt to look for advantages: "What if I shoot you first? Bolt sticking right outta your eye." – Gregg.</p>
+        </li>
+        <li><p>Gregg is obviously this type. From arranging back-end deals with figures like Steve Scriggins, managing to shoplift materials from the Snack Falcon at whim without getting caught, and even breaking into the Historical Society and lock-picking elevators. He also mentions thinking about breaking out of County Jail someday.</p>
+        </li>
+        <li>Jen is Gregg's cousin, and seems to share similar interests, including owning a crossbow, and seems rather impulsive.</li>
+        </ol>
+        <p><em>Adventurous:</em></p>
+        <ol>
+        <li><p>Foxes, in-game, are also the adventurous type. This is plainly clear with Gregg, and can be spotted in Jen to an extent.</p>
+        </li>
+        <li><p>Gregg has broken into the Food Donkey, a local abandoned grocery store, as well as stealing an abandoned car battery, and breaking into a building enthusiastically, it's clear that Gregg enjoys adventure and risk-taking behavior. However, he is also concerned about this to some extent as shown in the wounds scene.</p>
+        </li>
+        <li>Jen is not mentioned very much, but seems to enjoy amateur hunting, as well as having moved to Bright Harbor from Possum Springs, he seems that he is willing to take large risks.</li>
+        </ol>
+        <p><em>Impulsive/Risk-Taking</em></p>
+        <ol>
+        <li><p>This ties into the personality of foxes, as they are also seen as being hyperactive, and rather impulsive. This aspect of Gregg's behavior is quite clear, although quite murky in Jen.</p>
+        </li>
+        <li><p>Not much is known about Jen's impulsiveness, as this is a blank field from the documentation I was able to gather.</p>
+        </li>
+        <li><p>Gregg is clearly a risk taker, however, and this shows up quite clearly through the story and is emphasized in the Gregg timeline. Crimes.</p>  
+        </li>
+        <li><p>Bears (Scientific, Atheistic, Traumatized)</p>
+        </li>
+        </ol>
+        <p>It would seem that all bears in game are portrayed as being rather scientific in nature, ta" scientific approach to the world. The one exception to this might be the bear in Mae's first musician dream (or Day 4 of the game, or 3:30 PM, 28 October, 2016 in real life.) The bear, however, is carrying powerlines, a symbol of technology. This will be explained even further in the dream section. The bear also appears shocked by the existence of the supernatural realm, and opens its mouth wide before dissolving.</p>
+        <p><em>Scientific:</em></p>
+        <ol>
+        <li><p>Bears are scientific creatures, or portrayed this way in game. One only has to look at Mr. Chazokov, and Angus, or even Selmers to figure to figure it out scientifically.This can be seen by Angus' refusal of Mae's already unlikely explanation of there being ghosts, and believing "that it was likely a tourist/hunter" despite him being able to see Eide in a miner's hat.</p>
+        </li>
+        <li><p>Angus is scientific in nature, and this shows up time and time again through chat dialogues, and his eventual approach to the situation of the cult, and is also a predominant factor when talking about his childhood to Mae at Possum Jump, and can also be seen at Donut Wolf.</p>
+        </li>
+        <li>Chazokov is also a scientific creature, as one can clearly note. He was a science teacher, and still retains a telescope, which you can visit. It is not known why Mr. Chazokov retired from school, perhaps of old age, or perhaps of other reasons, but the first is rather doubtful, as he still maintains enough balance coordination to stay on a rooftop.</li>
+        <li>The Dream bear is bearing power lines on its back, what would have been, in Mae's dream setting (taking place in the 20s-40s), a symbol of technology and modernity. Both of these are attributes attached to science, and the benefit it brings.</li>
+        </ol>
+        <p><em>Atheistic:</em></p>
+        <ol>
+        <li><p>As another side-characteristic of being scientific, it is also likely that bears would be secular in nature, namely due to their firm beliefs in science, and perhaps as a relic of their childhood, as Mr. Chazokov would put it: "Is it not common for one to seek that which is unlike where they grew up?"</p>
+        </li>
+        <li><p>Angus is obviously secular, this is further seen in the Donut Wolf dialogue, as evidenced below:</p>
+        </li>
+        </ol>
+        <p>Mae: "Have donuts ever made you think twice about God?"</p>
+        <p>Angus: "No."</p>
+        <ul>
+        <li>Furthermore, Mr. Chazokov can also be implied as being an atheist, as he states during the constellation of Catsys that these gods are only "stand-ins for things we cannot control, you may say the flu, or the cancer, or such."</li>
+        <li>Even the Dream Bear, despite existing in the "spirit/supernatural" world, the Dream Bear seems appalled or even shocked that the spirit world in which Mae astral-projects into, and opens his/her mouth wide open at the sight.</li>
+        </ul>
+        <p><em>Traumatized:</em></p>
+        <ol>
+        <li><p>Bears also appear traumatized. While Mr. Chazokov might not appear so, the game also mentions that he rented out Selmers' house for an unknown reason (fiscal problems?). He's also said that he's moved from a foreign country and he's a retired teacher for an unspecified reason.</p>
+        </li>
+        <li><p>Angus, a victim of child abuse, was locked in a pantry often by his parents, out of the remainder of which, often overnight. His mother was rather neglecting, and his father was plain mean, beating him up every time he came home, high on alcohol. This is reflected in his rather shy personality, and his unwillingness to go out on risky social ventures.</p>
+        </li>
+        <li>Chazokov is a retired teacher, an emigrant from probably Russia or Poland, for unspecified reasons, and also has rented out half of Selmers' house for presumable financial problems. It is never stated why he left his country of origin, and left teaching, but possible reasons could be due to trauma-causing events, or even trauma-induced events.</li>
+        <li><p>The Dream Bear is obviously in this state, and you can tell both by its facial appearance, and its being in the "supernatural" realm in the first place.</p>
+        </li>
+        <li><p>Cats (Disattached, Façade, Adventurous, Mentally Neutral)</p>
+        </li>
+        </ol>
+        <p>The main protagonist herself is a cat, followed by her family, as well as Casey, Danny, and most notably, Eide, the main pseudo-antagonist. These similarities are also shared by all five of these characters, and it can be noticed in all of these species, rather noticeably, that they are disattached from reality.</p>
+        <ol>
+        <li><p>As for cats, they all seem rather disattached from reality, particularly Mae, Casey, Eide, and Stan. Mae can be particularly noted, especially on the couch episode, but that won't be the focal epicenter for our points on this species.</p>
+        </li>
+        <li><p>Casey seems to have followed Gregg's personality quite a bit, and likely did crimes with Mae, and was presumably, quite adventurous. He was even reputed by the cult to become a drug dealer, presumably in Bright Harbor. However, this can also be a sign of social dis-attachment, and even Gregg to some degree is dis-attached, as remarked by Bea: "Well, Gregg is probably bi-polar."</p>
+        </li>
+        <li>Danny has also lost a job multiple times ("And last time I only lasted 6 months before getting laid off. Do you know what that does to a resume?"), and seems nearly asocial, as he is never seen with any of his friends, and does not seem rather talkative, talking only when prompted to by the player, with whom he has very little dialogue. The reasons for this are never known, however, this can potentially be a symptom of being disattached.</li>
+        <li>Eide is clearly disattached from reality. From offering to kidnapping kids, stalking Mae and the gang in the closing scenes of the game, and even managing to somehow appear in the elevator. (The game does black out right before he jumps at Mae however. I personally believe this was added for dramatic effect/momentary suspense, but during this scene, he could have been hiding right behind the elevator, perhaps in a closed off entrance.)</li>
+        <li><p>Stan was an alcoholic, and Mae says during the party that her father had to abandon drinking due to it causing internal familial problems. A common reason for picking up drinking in the first place would be warding off depression/sadness, which can be induced by dis-attachment from the world, to a certain degree.</p>
+        </li>
+        <li><p>To push this even further, it seems that most characters that are a cat try to hide behind a <em>façade</em>, that is, they appear very different outwardly to how they behave inwardly, or to themselves and their family. Not much is ever known about Eide, or "is relation to his (family?) is. However, from Stan"asey we can infer this judgement.</p>
+        </li>
+        <li><p>Mae, obviously, seems to be clearly hiding behind a façade, even admitting right prior to the party (8:25 PM, 27 October, 2016, Eastern Standard Time). In a nutshell, this can be summed up as she believes to be forcing herself to be socially active, thus, perhaps, even feeling that these relationships feel artificial/manufactured.</p>
+        </li>
+        <li>Stan is a former alcoholic, yet again, I must mention this. It is also implied that he has a certain level of mental illness for unknown reasons. He seems to hide behind a façade as well, not mentioning financial problems to Mae, or trying to shroud his discontent with his job. Either way, he doesn't seem to spend a lot of time with his family, as he isn't downstairs most nights, by which time, as Mae's mother claims, is 4:00 PM. While he might get off at 5:00, or even later, as suggested by Bea's hangout, it is quite odd that the game spans some nine days, all without him taking off a weekend, or two consecutive days off. It is also possible that he works six days a week, but it can also be assumed that he works seven. The first full day that Mae spends back in Possum Springs is a Tuesday. This means that by October 29, 2016, or two days before Harfest, he should have taken an off day, as that day would be Saturday, the following, October 29, or the day before the day before Harfest takes place, he should also have taken off, as that was Sunday. However, it is also commonplace in the United States for a grocery store employee to be working six days. I apologize, I went off on a tangent. Back to the main point.</li>
+        <li>Eide's familial ties are unknown, and to be noted, he is also a cat, of which species a large percentage of the town's demographics are comprised. However, there is an idea going around that Eide is actually an alias for Ed Skudder, the founder of the cult, as both can walk pass walls, and Eide is an anagram of both the founders' names: Jim Dorney, and Ed Skudder. Then again, this would further denote his façade, as even the cult will mention it. "But Ed had the glimmer."</li>
+        <li><p>Casey was also hiding behind a façade, as it is noted that Mae never knew that he was involved in actual crime, like the cultists claim. Although, the cultists can't quite be trusted, however, it is noted to some extent that he had personal familial conflicts with both of his parents. "His parents should have cared more about him before it came to this."</p>
+        </li>
+        <li><p>Cats are mainly of the adventurous type, and this is a nearly unanimous common factor shared between all personalities corresponding to these species. This is both a personality trait and an adept physical one, such as climbing for instance, which in the story is something that Mae was good at, and seems to run in the family line. (e.g. Mae's mother also mentions climbing when she was younger in Jenny's field.)</p></li>
+        <li><p>Mae has obviously been quite adventurous ever since junior high, doing "crimes" with Gregg and Casey, and likely haven crossed the legal borderline more than once.</p>
+        </li>
+        <li>Casey was also quite adventurous, and this is shown many times throughout the game.</li>
+        <li>Mae's mother can be noted to be quite good at at climbing during childhood, but obviously isn't any more due to ageing.</li>
+        <li>It is never implied whether Danny is the adventurous type, but it is never denied either.</li>
+        <li>Stan is a multi-purpose worker, and naturally, as that sort, and the type who doesn't seem to hesitate to tell his boss to shove it, seems rather adventurous/impulsive.</li>
+        <li>Eide has joined/founded the cult, more likely out of desperation than desire for adventure, which would, for obvious reasons be an odd reason to join the cult.</li>
+        <li><p>There is a teen in the trolley/subway beneath Possum Springs who is also a cat, and if you talk to them every day they are available, especially after Harfest, when you ask for the missing purpose, it seems that all of them unanimously want to go to the rough area. I already forgot its name. Crap.</p>
+        </li>
+        <li><p>Mentally neutral, as defined above, would mean the rough balancing of mental disorders in either direction, or the complete absence thereof. For example, I have ADHD and autism, does it balance (in actions/impulses)? No. But is it theoretically capable of doing that? Perhaps. Mae could be sitting on a knife's edge right now, where she admits to herself that she is on the fast lane to "Hermit-dom". This could be a result of her disassociation, or maybe even a fifth columnist disorder that we don't know about. Either way, she seems rather balanced at the moment, but again, on a knife's edge. Which means things can rapidly take a plunge at any moment.</p>
+        </li>
+        <li><p>Mae, at least during the timeline of the story, seems rather relieved to be back in Possum Springs after spending a perpetual episode of derealization in Durkesvilleburg, the town where she went to college.</p>
+        </li>
+        <li>Stan is a former alcoholic, but seems now to have things under wraps, as he has stopped drinking, and doesn't appear to have too much of a social problem, although he will admit that socializing is tiring.</li>
+        <li>Casey is never mentioned as having a particularly strong mental disorder, and thus, as defined above, would be mentally neutral.</li>
+        <li><p>Eide, same thing.</p>
+        </li>
+        <p>- Rodents (Passive, Shy)</p>
+        </ol>
+        <p>This isn't very hard to prove, but we also don't have many rodents that we can look at on a daily basis. However, I will use three main characters from the rodent family in Night in The Woods to give the description of their relative plausible personality. (Mice Writers, Lori Meyers, and Rodent-in-the-Subway).</p>
+        <p><em>Passive:</em></p>
+        <ol>
+        <li><p>Passive should be defined as not being rather aggressive, not breaking into grocery stores, or cars, or aggressive out of the blue or that could, theoretically, they could very realistically go to jail for. For instance, pirating movie programs is not something that has a high probability of you going to jail.</p>
+        </li>
+        <li><p>The Mice Writers are particularly passive, and one can see this as they invented written language, but were also said by Mae (or one of the gang?) to be at the bottom of the food chain in Longest Night. Thus, they wouldn't attempt to act as aggressors.</p>
+        </li>
+        <li>Lori Meyers is passive, and this displays itself in chat dialogues, as she does not wish to share much information, and instead finds great comfort in being alone, whether at the War Monument or at the top of the roof.</li>
+        <li>The Rodent-in-the-Subway never really says much and always dismisses Mae whenever Mae pops up in the subway and attempts to talk to the teens. She also seems to be the least talkative of the group, resorting to short sentences such as "Eh.", or, "Literally nobody cares."</li>
+        </ol>
+        <p><em>Shy:</em></p>
+        <ol>
+        <li><p>All of the mice seem relatively shy, and do not talk very often, or if they do, very little at most. They will often carry short, single-handed monologues for a while before stopping themselves.</p>
+        </li>
+        <li><p>Lori Meyers is self-evidently the shy and retiring type. Whenever Mae asks her whether she wants to come over to her house for dinner, or when she accidentally remarked that Maple Street was the "rich street", Lori Meyers eventually hyperventilates after Mae's response, and it takes a while for her to cool down.</p>
+        </li>
+        <li>The Mice Writers invented written language for a reason, and a plausible reason, as they seem to stay silent in the picture of the constellation (Longest Night), is that they were rather shy and did not believe in engaging dialogues with one another. This would have lead them to speed up the development of written language so that they would still be able to communicate to one another.</li>
+        <li>As for the Rodent-in-the-Subway, it can be noted that she never engages in dialogues with any of her friends, or that her friends don't engage in dialogues with her, or any other of themselves.</li>
+        </ol>
+        <p>Although it may seem that there might be a familial domination of a single species, it can also be noted that some interests could be influenced by your parents, as they, from an early age, can choose to develop some of your interests. They don't have a total monopoly on you, but they can guide you in a certain direction. For instance, Mae's grandfather had a heavy impact on her, and this led to her assuming that Eide was a ghost to begin with. Furthermore, personalities can obviously be influenced by your parents, or your environment.</p>
+        <p>For instance, back in my early childhood days (1st-4th) grade, I lived in an environment that sought to break talkative people, and this wasn't quite that easy for me. It was also during this time that I was diagnosed with these disorders, and I was suspended twice in 2nd grade and kicked/expelled out of 1st. Eventually I managed to pull myself together and zip it up, but today I often question whether I am asocial. We can see some of this in Angus, and he's rather shy, and doesn't initiate conversations. His upbringing helped influence his personality drastically, so that now he always takes a scientific approach, and doesn't believe in any religion.</p>
+        <p>This taxonomy of species would definitely help abridge some differences that could thus not be explained, or are major blockades in the view of history as these animals see it (e.g. Early social schisms).</p>
+        <ul>
+        <a id = "internal-perspective"></a>
+        <li><strong></strong> Internal Perspective:</li>
+        </ul>
+        <p>Here's where we get into the lesser known portions of potential philosophical/stylistic choices that were picked for Night in The Woods. These could be potentially helpful as context, and while these do not seek to explain the story's main points (e.g. Supernatural, paranormal occurrences), these could help the reader view the story in a different tone.</p>
+        <ol>
+        <li>One thing I'd like to point out is the art style. For me, I sincerely doubt they picked a vector, minimalistic art style for no particular reason other than aesthetic value. Towards the end, Mae reveals on the couch that she viewed everything as mere shapes. Perhaps the vector, minimalistic art style is to suggest this, or even further, how Mae might see the world, as something without dimension, 2D in a sense. If this is true, I think it's particularly a great subtle touch.</li>
+        <li>Foreshadowing plays a big factor early on, and if one is profound enough to decipher it as early as possible in a fresh playthrough, you'll find out the main later plot of the game before you even get there. This is evident from Garbo a"loy episodes ("Next up: Garbo and I join a cult!"), to some of your first hangouts with Gregg ("Too bad you didn't join a cult."). Even Bruce offers you your first material hints, saying that there's a strange fire with a bunch of strange people around and even saying that from "my experience" strange fires are never "good" early on, hinting that he's probably been around these people before.</li>
+        <li>Again, existentialism is a big part of philosophy in Night in The Woods, and overshadows most other philosophies. The most popular form of philosophy for the common man, is by far, existentialism, take for instance, humanism, both idealistic and morally, or discuss the trends of civil orders, or the structures of societies. Despite the wide variety of philosophical topics available to choose from, Night in The Woods has gone with existentialism, as I believe it is most relatable to the widest audience, and understandable with many. This can be summed up in my personal motto, <em>ex nihilo omnia, ex omnia nihilo.</em> (Out of nothing, everything; out of everything, nothing.) <em>omnia</em> can also mean anything, including all fields, hence the prefix, <em>omni-</em>.</li>
+        <li>The game seems to end in a satisfying tone for most players, but few realize that there's still gaping problems left open, even as the credits roll. For instance, if Mae attaches such deep sentiment to the town of Possum Springs, what will actually happen to her as Possum Springs slowly becomes a ghost town? Will she decide to move out and seek a future elsewhere, only to eventually be doomed after a period of time because she saw it as nothing? Or would she simply stay put in Possum Springs, trying to hold the town together?</li>
+        </ol>
+        <p>This is given special emphasis towards the closing chapters, but few people seem to recognize this as a special problem. The game ends with her, basically pledging to stay put ("And I want to hold on, until I'm thrown off", "But now that I think about it I think that I could just build another house."). It's never revealed what will happen immeiately after, and this is even more problematic if the supernatural approach were taken to logic.</p>
+        <p>If the supernatural approach is taken, what will happen to the town after the Black Goat dies? Like, sure, he's going to be satisfied with the feast for a while, but afterwards he's eventually going to grow hungry, and then what will happen to the town? Would it revert back to its state of decline? Or was the Black Goat mainly a parasite, and the town will thrive? This is never fully explained in Mae's conscience either.</p>
+        <ul>
+        <a id = "dreams"></a>
+        <li><p><strong></strong> Dreams:</p>
+        </li>
+        <li><p>What the dreams represent is never fully known, as they are rather cryptic in nature. I personally believe that the dreams are nearly fully symbolic, and thus not representative of the main storyline, or supernatural. However, some people have decided to take a couple of jabs at it. I will leave my ideas last so that you can decide for yourself and keep an open mind.</p>
+        </li>
+        <li><p><strong>Mae's dreams are an astral projection of the town.</strong></p>
+        </li>
+        <p>This is by far, one of the largest theories out there in terms of what the dreams mean, and this is derived mainly from two sources. One, there's a song named "Astral Alley" in the game, and two, it was previously stated that Mae had "special abilities". Astral projection is defined as having a willful out of the body experience, and transferring yourself to another consciousness, of which is capable of traveling anywhere, even outside of the universe. There is, however, no further evidence to support this in game.</p>
+        <ol>
+        <li><strong>Mae's dreams are foreshadowing the future.</strong></li>
+        </ol>
+        <p>If this is true, that mean's Mae's hardships are only going to get worse as time moves on. This assumption states that the giant animals are actually constellations, thus holding no actual value, but are there only for the sake of it. The dreams would also always depict Possum Springs in the past, or the future. The Deep Hollow Hollerers could be playing tunes that the Black Goat, or the Sky Cat, or even the Forest God instructed them to, and each of the dreams would represent a disaster set to happen to the town, as the town devolves successively during each dream sequence.</p>
+        <ol>
+        <li>The windstorm dream actually represents the Great Blizzard of 2010, causing major damage within Possum Springs.</li>
+        <li>The astral fish dream would be the Mid-Atlantic flood of 2006, or perhaps even the Great Flood of 1998.</li>
+        <li>The astral train dream shows the entire town moving away in a tactile manner, leaving Mae stranded and behind.</li>
+        <li>"Batter up", as the first dream is referred to, is likely an outpouring of rage and bitterness, or a lash out of fear that Mae experienced during college, or perhaps, has no real meaning at all as she is drunk during the dream.</li>
+        </ol>
+        <p>Another alternate version of this interpretation stated the following:</p>
+        <ol>
+        <li>"Batter up" still has no actual significance, and is just Mae's way of dealing with what happened at the party.</li>
+        <li>Astral Alley (This might show the intoxication of the D.H.H, as one of the musicians is on a well, and in fact, all of them are. "And that water was poison", Cult member. Could this have referred to arsenic or lead?), Astral Coal Town (Showing the days during the hyper-capitalist era, when coal mining was the city's key industry), Astral Train (This shows that the town's glory days are beginning to come to an end, as the train is moving away, and it might represent the town during the World Wars, as you can see bodies floating right on by, men, who might have died from the draft.), and Astral Fish (The great flood of 1998 or 2006,  in which the town was completely drowned out.)</li>
+        <li>The last dream where you meet the Sky Cat signifies nothing left. It is Nostradamus' blank page, the future, showing that there is nothing left for Mae, Possum Springs or any of her friends. Only her conscience left to comfort her.</li>
+        <li><p>As the dreams progress, the town grows more and more distorted, perhaps showing the effect the gas, or the Black Goat, the water, and mental illnesses have on the town, slowly crippling it, making it more and more distorted.</p>
+        </li>
+        <li><p><strong>Mae's dreams represent ideals.</strong></p>
+        </li>
+        </ol>
+        <p>This interpretation is my idea, and I believe that the dreams are mainly symbolic in nature, showing what Mae thinks will happen to the town. It is also important to note that the coma is actually a dream, as according to the rest of the gang, "your aunt and some guy fished you out of the woods", where as in the dream, you wa"e. Huh.</p>
+        <ol>
+        <li>"Batter up" represents Mae's outpouring of fear and anger at college, and particularly the Statue. This could also be inflated via her verbal and mental breakdown at the party.</li>
+        <li>During the next dream, this could depict the beginning of the town, and I personally believe th" next couple of adjacent dreams following will have the history of the town as a prevalent theme. I also believe that the animals in each dream embody an ideal, instead of a particular event, or her friends as some have suggested.</li>
+        <li>(Same as vi, Section 2.) Astral Alley (This might show the intoxication of the D.H.H, as one of the musicians is on a well, and in fact, all of them are. "And that water was poison", Cult member. Could this have referred to arsenic or lead?), Astral Coal Town (Showing the days during the hyper-capitalist era, when coal mining was the city's key industry"ral Tr"his shows that the town's glory days are beginning to come to an end, as the train is moving away, and it might represent the town during the World Wars, as you can see bodies floating right on by, men, who might have died from the draft.), and Astral Fish (The great flood of 1998 or 2006,  in which the town was completely drowned out.)</li>
+        <li><p>Now here's the interesting part, the creatures. I personally believe that the creatures in Mae's dreams do in fact, represent ideals, and not constellations, or Mae's friends. Here's what I believe them to represent, accordingly.</p>
+        </li>
+        <li><p>In the first dream of the creatures, the first creature is a Bear, carrying power lines. As explained earlier in the section ( <strong>The Personality Explanation</strong> ), I believe that the Bear represents technology, as it is carrying power lines on his back, and as Mae's dreams take place in the past, back in the late 1800s (by that I mean 1880s) to World War II, power lines would have been seen as a sign of civilization, and powered homes were all the rage. I believe he represents technology, and intellect.</p>
+        </li>
+        <li>In the second dream of the creatures, there is a squirrel, running away from something. I believe, and this is mainly due to the second dream involving the Black Goat at the mine lake, that the squirrel represents constantly having to run away from an unseen foe, and that it is all futile in the end, as the squirrel slowly evaporates, opening its mouth as it realizes it is caught.
+        In the third dream of the creatures (or was it the fourth?), there was a crocodile, which I believe personally represents danger as it comes slowly to Mae, closing in closer than any of the other creatures, and taking Mae clearly (although Mae dissolves in every dream), and dissolving her. This could be seen as a warning.</li>
+        <li>The fourth dream of the creatures depicts a fish getting speared by a crane. I believe that this shows two things. However, I'd like to say that when I first saw this, my head instantly jumped to the Polish and Albanian coat of arms, as they both show birds with their wings spread out in a similar fashion. This could be seen both as a sign of protection, and a warning.</li>
+        </ol>
+        <p>In the protection interpretation, the crane is spreading its wings out over Mae, spearing the fish, which might represent further flood and natural disaster.</p>
+        <p>In the warning interpretation, it would further reinforce the idea that running away is futile, and that Mae, just like the fish would eventually get speared. Furthermore, the crane could represent nobility, and sticking up for your morals, thus arguing that it would be morally white to spear your enemies, such as the cultists.</p>
+        <ol>
+        <li><p>In each of the dreams, the creature gets closer and closer to Mae, perhaps as a warning that something is wrong. It is also worth noting that there are only four creatures, and that there are only four main characters in Night in The Woods. While they might not directly represent their respected species, they could represent their personality.</p>
+        </li>
+        <li><p>Angus for instance, would be the bear, representing technology and science with the power cables on his back, and being shocked at the spirit world.</p>
+        </li>
+        <li>Bea, next, would be the crocodile, quite cold and distrusting, and this can be reflected in the way the crocodile acts in the dream, slowly evaporating.</li>
+        <li>Gregg, would be represented by the crane, both protecting Mae and the gang, but also temporarily, as he will eventually fade out, representing the move to Bright Harbor.</li>
+        <li>Mae, would be the squirrel, as she does not see herself as a predator, but rather as prey, and this is indicative in the way she acts during the Second Dream of the Black Goat.</li>
+        </ol>
+        <p>Furthermore, as the creatures continue, it must be noted that each of them eventually disappear, as they each dissolve. Each, will eventually, fall. For instance, both Gregg and Angus will move away inevitably. Bea's fadeaway could be a slow withdrawal from social life, finding herself more and more alone. Mae, naturally, would then withdraw, fading away, as she can't go anywhere else, due to finding other places simply nothing.</p>
+        <ol>
+        <li>Lastly, the Sky Cat shows what will eventually happen to the town, to Mae, her friends, and the world as a whole, stating that the universe is temporary, that it will soon be forgo"and that th"d itself will also soon be forgotten. Stating that everything is nothing, again, similar to the extensive philosophy in Night in The Woods, existentialism.</li>
+        </ol>
+        <p>Again, I do not endorse any of these theories, even my own, and as such I do not take any theories as fact, or automatically assume any of them as fact.</p>
+        <a id = "paranormal-occurrences"></a>
+        <p><strong>Paranormal Occurrences:</strong></p>
+            Night <span class="hljs-keyword">in</span> The Woods plays host <span class="hljs-built_in">to</span> what many simply assume are supernatural, however, there are <span class="hljs-keyword">a</span> few more logical, more down <span class="hljs-built_in">to</span> earth explanations, than simply taking <span class="hljs-keyword">the</span> game <span class="hljs-keyword">at</span> face <span class="hljs-built_in">value</span>. Of course, gas, <span class="hljs-keyword">or</span> simply <span class="hljs-keyword">the</span> supernatural are <span class="hljs-keyword">the</span> most prevalent explanations, <span class="hljs-keyword">and</span> I will share <span class="hljs-keyword">with</span> you <span class="hljs-keyword">the</span> gist <span class="hljs-keyword">of</span> both <span class="hljs-keyword">of</span> these explanations.
+        <ul>
+        <li><p><strong></strong> Poison Gas:</p>
+        </li>
+        <a id = "maple-street"></a>
+        <li><p>On Maple St.</p>
+        </li>
+        </ul>
+        <p>Maple Street is the street that Mae lives on, and there is recently a sinkhole, which seemed to have happened close to the beginning of the dream sequences, showing there could be a connection. Should Poison Gas be originating from the mine like the news article claims, it could be causing mental deterioration, hallucinations, sleep paralysis, paranoia, and other oddities in the afflicted. This would help to explain some of the feelings that Mae would feel during this time, especially if Mae was close by to the sinkhole, which is actually not that far.</p>
+            It can also be noted that her mother had multiple miscarriages <span class="hljs-keyword">while</span> living inside their current home, that Mae's size <span class="hljs-keyword">is</span> relatively abnormal, <span class="hljs-keyword">and</span> that <span class="hljs-keyword">as</span> the first known child <span class="hljs-keyword">to</span> be born <span class="hljs-keyword">and</span> raised <span class="hljs-keyword">on</span> that street, it can be relatively inferred that Mae's size <span class="hljs-keyword">is</span> abnormal, <span class="hljs-keyword">and</span> that Poison Gas might have something <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> <span class="hljs-keyword">with</span> hormone regulators, which could cause a stunting <span class="hljs-keyword">of</span> growth.
+        
+            Furthermore, Mae experiences a variety <span class="hljs-keyword">of</span> mental illnesses, a combination <span class="hljs-keyword">of</span> which could have been artificially induced <span class="hljs-keyword">by</span> the gas <span class="hljs-keyword">in</span> the mines, <span class="hljs-keyword">as</span> the news article also reported that the afflicted victims <span class="hljs-keyword">with</span> the gas did, <span class="hljs-keyword">in</span> fact, experience hallucinations, dreams, <span class="hljs-keyword">and</span> one even ran outside <span class="hljs-keyword">of</span>his home, <span class="hljs-keyword">to</span> his watery grave. A similar thing can be noted<span class="hljs-keyword">in Mae <span class="hljs-keyword">where</span> she also seems <span class="hljs-keyword">to</span> wish <span class="hljs-keyword">to</span> sacrifice of <span class="hljs-keyword">to</span> the Black Goat toward the rear ending <span class="hljs-keyword">of</span> the game.
+        <ol><br>
+        <a id = "in-the-mine"></a>
+        <li>In the Mines.</li>
+        </ol>
+        <p>If Poison Gas is also in the mines, this could lead to her grandfather developing a mental disorder as well (this would partly explain why he was so invested in the supernatural to begin with), furthermore, he would have had a high chance of passing on this mental disorder, (if it was hereditary), to Stan, who in turn, would have more than likely, passed it on to Mae. This would lead to a familial chain connection of ghostly/supernatural dreams and sightings in her family, and would explain some things, such as her grandfather being so interested in ghost stories, then Mae's father turning to alcohol, and finally Mae, who is experiencing the results.</p>
+        <p>As both Mae's grandfather and father both worked in the mines, it would be more than plausible that both of them would have contracted a range or scope of disorders from the poison gas if it was respiratory, for instance, it deteriorated certain areas in the brain, especially those linked to emotion, perhaps even influencing parts such as the frontal cortex and the amygdala. If this is true, this would also explain the cult, as:</p>
+        <ul>
+        <li>They would all have gone relatively insane at the same time, and with similar symptoms reported in similar disorders, they would have collectively thought that something, or an entity, was talking to them, and eventually they would all give this a name. The Black Goat.</li>
+        <li>They then proceeded to find a deep pit, which would also be a vent for further gas to come, and is nearly bottomless as the cult will say, "Jim never hit bottom", implying that the pit is extremely deep.</li>
+        <li>By throwing corpses in there (39 corpses to be exact, coming out to about 2 people getting sacrificed every year, or a person sacrificed every half month, which is around the deterioration span of a corpse), they would block the vent, so that the Black Goat didn't sing as much. When the corpse deteriorated, they would then start to hear the "singing" more and more, until they were finally driven to pick yet another person to plug the hole.</li>
+        <li>As the cultists state that they "practically built a new elevator", it would stand that they might also have a maintenance shaft, or even another ladder behind the scenes, which Eide could have used to climb. Even further, as the view is 2D, we are never able to see whether there is say, a tarp behind which Eide could hide. Even if there was, as it is completely dark, it would be hard to see, especially in the confusion of them all.</li>
+        </ul>
+        <p>This would explain the majority of the game's problems, but it doesn't solve all of them. For instance, it stands to reason that if this truly was poison gas, why the rest some individuals on Maple Street were left relatively unaffected, for instance, Mae's mother. However, gas in the mines solves most problems, as then, it can be noted only people who went in the mines and their posterity actually seem to suffer from paranormal experiences.</p>
+        <ul>
+        <a id = "supernatural-creatures"></a>
+        <li><strong></strong> Supernatural Creatures/Face Value Explanation:</li>
+        </ul>
+        <p>The other leading prevalent theory is to simply accept it for what it is at face value, as zero percentile symbolic, and one hundred percent real. This approach would lead to interesting conclusions, and possible side-theories/ideas that could branch off of it. Furthermore, Supernatural creatures would also discredit scientific/logical foundations, leaving many rather uninterested in this explanation as it simply does not make sense to them, respectively. Here's the general gist of it.</p>
+            All things <span class="hljs-keyword">that</span> happen <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> game, whether they be <span class="hljs-keyword">in</span> Mae<span class="hljs-comment">'s dream, the Black Goat, the Cult, the Sky Cat, all of these things are one hundred percent real, tactile objects that is as real to you and me as the very computer I am currently typing on to deliver this message to you. Furthermore, as these are taken literally, this would lead to some serious interpretation of Lovecraftian horror, a theme prevalent throughout the game, but is never actually taken or rendered by the game to be true.</span>
+        
+            If this was <span class="hljs-keyword">the</span> case, however, exceptions <span class="hljs-keyword">put</span> aside, this could lead <span class="hljs-keyword">to</span> <span class="hljs-keyword">some</span> interesting conclusions. First <span class="hljs-keyword">of</span> all, <span class="hljs-keyword">the</span> town would <span class="hljs-keyword">not</span> hold up <span class="hljs-keyword">for</span> much longer,<span class="hljs-keyword">and</span> soon <span class="hljs-keyword">after</span> would cease <span class="hljs-keyword">to</span> exist, <span class="hljs-keyword">after</span> <span class="hljs-keyword">the</span> Black Goat was finished <span class= "hljs-keyword">with</span> his feast, <span class="hljs-keyword">or</span> <span class="hljs-keyword">as</span> some might <span class="hljs-keyword">put</span> <span class="hljs-keyword">it</span>, force feeding, Mae might find herself <span class="hljs-keyword">the</span> target <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> Black Goat <span class="hljs-keyword">with</span> virtually no protection, <span class="hljs-keyword">as</span> <span class="hljs-keyword">the</span> Sky Cat <span class="hljs-keyword">is</span> uncaring, <span class="hljs-keyword">and</span> thus, logically, would <span class="hljs-keyword">not</span> provide protection <span class="hljs-keyword">for</span> her.
+        
+            Even further, <span class="hljs-keyword">as</span> <span class="hljs-keyword">the</span> town deteriorates, <span class="hljs-keyword">it</span> becomes more <span class="hljs-keyword">and</span> more unclear which main <span class="hljs-built_in">characters</span> will actually be <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> town. Eventually, <span class="hljs-keyword">the</span> town might reach an apoapsis, <span class="hljs-keyword">in</span> which <span class="hljs-keyword">the</span> town <span class="hljs-keyword">is</span> no longer familiar <span class="hljs-keyword">to</span> Mae, <span class="hljs-keyword">and</span> thus everything, everywhere, becomes shapes. However, <span class="hljs-keyword"></span> <span class="hljs-keyword">is</span> also possible <span class="hljs-keyword">that</span> her sense <span class="hljs-keyword">of</span> familiarity would adapt, <span class="hljs-keyword">and</span> thus <span class="hljs-keyword">the</span> town, <span class="hljs-keyword">to</span> <span class="hljs-keyword">some</span> extent, would <span class="hljs-keyword">continue</span> <span class="hljs-keyword">to</span> be a safe haven.
+        <ul><br>
+        <a id = "lead-poisoned-water"></a>
+        <li><strong></strong> Lead/Poisoned Water</li>
+        </ul>
+        <p>It is unknown what type of poison exists in the water, but it is possible for the water to contain hazardous amounts of lead. This is alluded to during the mine episode ("And the water was poison"), and during the Harfest play. As this is a relatively small town, and it has its own spring, if the water had indeed become poisonous enough to the point where it could induce mental deterioration, it stands to reason that this could cause a similar mental disorder involving an unknown entity, or entities.</p>
+            Furthermore, <span class="hljs-keyword">if</span> one townsfolk were <span class="hljs-keyword">to</span> suggest <span class="hljs-keyword">that</span> this unknown entity were <span class="hljs-keyword">of</span> a certain nature/<span class="hljs-built_in">character</span>, <span class="hljs-keyword">the</span> <span class="hljs-built_in">rest</span> <span class="hljs-keyword">of</span> those afflicted might fall <span class="hljs-keyword">into</span> <span class="hljs-keyword">the</span> delusion, believing <span class="hljs-keyword">that</span> <span class="hljs-keyword">the</span> unknown entity was <span class="hljs-keyword">of</span> a similar characteristic, eventually modifying <span class="hljs-keyword">or</span> even combining their beliefs <span class="hljs-keyword">into</span> a unified entity, <span class="hljs-keyword">the</span> Black Goat. This unified entity would thus have been thought <span class="hljs-keyword">by</span> many miners <span class="hljs-keyword">to</span> be <span class="hljs-keyword">the</span> entity <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> pit, <span class="hljs-keyword">and</span> <span class="hljs-keyword">as</span> they already had mental delusions, they would only have continued <span class="hljs-keyword">to</span> reinforce them. Already driven <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> point <span class="hljs-keyword">of</span> insanity <span class="hljs-keyword">by</span> <span class="hljs-keyword">the</span> poisoned water, they could theoretically, have started seeing hallucinations, most <span class="hljs-keyword">of</span> which would have been interpreted <span class="hljs-keyword">to</span> be <span class="hljs-keyword">the</span> Black Goat, which could either have originated <span class="hljs-keyword">as</span> a <span class="hljs-keyword">local</span> consensus, <span class="hljs-keyword">or</span> a figure <span class="hljs-keyword">in</span> <span class="hljs-keyword">local</span> mythology.
+        
+            However, <span class="hljs-keyword">it</span> should be noted <span class="hljs-keyword">that</span> <span class="hljs-keyword">it</span> <span class="hljs-keyword">is</span> unknown whether <span class="hljs-keyword">the</span> spring was connected <span class="hljs-keyword">to</span> further tributaries, <span class="hljs-keyword">or</span> whether <span class="hljs-keyword">it</span> was a singular spring. If <span class="hljs-keyword">the</span> spring <span class="hljs-keyword">is</span> indeed, <span class="hljs-built_in">say</span>, groundwater, <span class="hljs-keyword">or</span> originating <span class="hljs-keyword">from</span> a cave, <span class="hljs-keyword">it</span> <span class="hljs-keyword">is</span> completely possible <span class="hljs-keyword">for</span> further springs <span class="hljs-keyword">to</span> <span class="hljs-keyword">continue</span> <span class="hljs-keyword">to</span> <span class="hljs-built_in">run</span>. In <span class="hljs-keyword">the</span> case <span class="hljs-keyword">of</span> multiple contaminated water sources, these water sources could <span class="hljs-keyword">continue</span> <span class="hljs-keyword">to</span> supply <span class="hljs-keyword">the</span> town logistically <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">time</span> <span class="hljs-keyword">of</span> Mae<span class="hljs-comment">' birth, or even after. It would thus continue to affect the town' populace in unforeseen ways.</span>
+        <ul><br>
+        <a id = "regular-disorders-related-mental-disorders"></a>
+        <li><strong></strong> Regular Disorders/Related Mental Disorders</li>
+        </ul>
+        <p>It would also be theoretically possible for the paranormal occurrences to be caused by a subtle mental disorder. This mental disorder would have two main prerequisites, but would also have many other requirements in order to fulfill the events we see throughout the game. For instance, it would lead to severe disassociation, lucid dreams/hallucinations, possible sleep paralysis, and many other factors would have to play in, border-lining this on the edge of mental insanity. (e.g. This type of disorder would also require the afflicted victim to hear voices, supposedly from a certain entity.)</p>
+            This disorder would have <span class="hljs-literal">two</span> prerequisites <span class="hljs-keyword">in</span> order <span class="hljs-built_in">to</span> be <span class="hljs-keyword">the</span> main affliction <span class="hljs-keyword">of</span> paranormal occurrences throughout <span class="hljs-keyword">the</span> game.
+        <ul>
+        <li><strong>--</strong> This disorder would be hereditary, being capable of being passed down from generation to generation. This could be caused by the miners drinking from the contaminated water source, mental, and possible physical, deterioration from gas, or any other contaminated medium. This would further implicate itself as older families in the town, like the Borowskis, would likely have found themselves drinking this water. If the disorder was hereditary, this would place many of the members of the Borowskis in the same boat. It is however, unknown whether Mae's family on her mother's side has stayed in the town for multiple generations. However, Mae's father's side seems to have a history involving regular mental disorders of a similar nature.</li>
+        <li><strong>--</strong> The disorder would be rather subtle, mostly viewed as non-intrusive on everyday life, but likely come alive during the night. It would also be particularly affected by stress, and temporary events up-ticking the amount of stress experienced by the victim would lead to sharp, severe episodes of this disorder, likely manifesting itself in dreams, hallucinations, and rogue impulses. During such episodes, it would likely be a Dr. Jekyll and Hyde situation, with the disorder's hallucinations and delusions being most active during night time.</li>
+        </ul>
+        <p>We can also reconstruct that such a disorder would lead to sleep walking, potential out-of-body experiences (as witnessed in the cave with Mae's dream to the Black Goat). Hallucinations can be seen with the coma, as conflicting accounts of what actually happened are given by the game. Mae personally believes that she walked out of it, however, this was done in an altered version of Possum Springs, as nearly all the buildings were missing in this altered version. Furthermore, Mae's friends all tell her that Mae's aunt and another unknown guy (could it be the Janitor?) fished Mae out of the woods. With these discrepancies, it should become immediately apparent that the coma was likely, indeed, a dream, as no other evidence was there to suggest that anyone else besides Mae had actually witnessed what went on in the dream.</p>
+        <ul>
+        <a id = "other-ideas"></a>
+        <li><strong></strong> Possible Solutions/Discarding of Evidence:</li>
+        </ul>
+        <p><strong>Note:</strong> This will be a rather unorganized and inefficient list, however, should offer some insight into what possible solutions there are regarding anthropomorphic animals and supernatural occurrences.</p>
+        <ol>
+        <li><p>While it is rather clear that supernatural creatures, or hallucinatory gas are the predominating explanations revolving around paranormal occurrences, is it not just as likely for hereditary disorders and contaminated water sources to be key factors in the game?</p>
+        </li>
+        <li><p>The Harleys could, in theory, be an adopted family, as they aren't even part of the same animal group, and are all three. We can also deduce that they are likely a dual-income family, which is relied upon for subsistence, and not as a means of getting out of there. This is likely why Selmers is obligated to attend to their needs, whereas had it been a single-income family, it would have been likely that a stay-at-home parent would be attending to the Harleys' instead.</p>
+        </li>
+        <li><p>The Janitor is probably not god. This is shown through Scott's ridiculing of the theory, and although this theory has picked up some steam, it is likely that the janitor was added there for a reason, perhaps to finish the game off in a looping fashion, in which the beginning is the end, and the end is the beginning.</p>
+        </li>
+        <li><p>The art style, a thin, minimalistic, vector art style, of which the fill of the shapes is homogenous, and gradients are minimal, or could even be considered non-existent, was possibly chosen as a backdrop to Mae's viewing of the world, as simply shapes.</p>
+        </li>
+        </ol>
+        <a id = "conclusion-and-my-opinion"></a>
+        <p><strong>Conclusion and My Opinion:</strong></p>
+        <p>Night in The Woods was a timeless piece of work. I personally believe that age (I'm 14) is not a predominating factor in whether you should play the game or not. I do not believe that you have to have certain experiences to play it either, or understand the problems the characters are going through. For instance, you don't have to have had depression (I haven't), or mental illness (I don't have it to an extreme extent where it interferes with my day-to-day life, but it creeps up subtly for me), or have extremely vivid/nightmarish dreams (well, I did), or have almost killed someone to understand what the characters were going through. As long as you have something in common, whether it be where you live, or an incident a long time ago that you can hold in relation to the main character (For me, I've hospitalized somebody once, and I've nearly shoved a person off a naval dockyard onto a nuclear submarine (No, this is not a joke, this was during a naval tour in San Diego)). Personally, I found the characters very relatable, and it's hard to do this in a game, or even in a book. And for that, I applaud you, game developers.</p>
+        <p>When writing a book, or building a narrative game, you want to nearly artificially structure the characters' dialogues, their actions, make them take the route that's logical instead of the route that they would have picked based on their feelings. Awkward dialogues shouldn't be avoided, I don't believe, and conversations don't always have to be grammatically correct. Rogue impulses are rarely seen, and characters nearly tend to revolve around a singular trait, or a collection of similar traits, when most humans don't revolve around a singular trait.</p>
+        <p>As for the reader, I'd like to tell you that this essay is not yet over. It will continue to be written, it will continue to be expanded, it will continue to breathe and live (metaphorically speaking, like any living document. Thank you for your time.</p>
+        <a id = "works-cited"></a>
+        <p><strong>Online Sources/Works Cited:</strong></p>
+        <p>"2010 Natural Disasters In The United States." <em>Wikipedia, the Free Encyclopedia</em>, Wikimedia, 17 May 2017, <a href="file:///tmp/d20180130-4-eep627/en.wikipedia.org/wiki/Category:2010_natural_disasters_in_the_United_States">en.wikipedia.org/wiki/Category:2010_natural_disasters_in_the_United_States</a>.</p>
+        <p>"2016 West Virginia Flood." <em>Wikipedia</em>, Wikimedia Foundation, 25 Jan. 2018, <a href="file:///tmp/d20180130-4-eep627/en.wikipedia.org/wiki/2016_West_Virginia_flood">en.wikipedia.org/wiki/2016_West_Virginia_flood</a>.</p>
+        <p>"Adina Astra." <em>Night in The Woods</em>, Wikia, <a href="file:///tmp/d20180130-4-eep627/nightinthewoods.wikia.com/wiki/Adina_Astra">nightinthewoods.wikia.com/wiki/Adina_Astra</a>.</p>
+        <p>"Astral Projection." <em>Wikipedia</em>, Wikimedia Foundation, 23 Jan. 2018, <a href="file:///tmp/d20180130-4-eep627/en.wikipedia.org/wiki/Astral_projection">en.wikipedia.org/wiki/Astral_projection</a>.</p>
+        <p>"Battle of Borodino." <em>Wikipedia</em>, Wikimedia Foundation, 28 Jan. 2018, <a href="file:///tmp/d20180130-4-eep627/en.wikipedia.org/wiki/Battle_of_Borodino">en.wikipedia.org/wiki/Battle_of_Borodino</a>.</p>
+        <p>"Behind The Name, Boro." <em>Behind The Name</em>, Behind The Name, <a href="http://www.behindthename.com/name/boro">www.behindthename.com/name/boro</a>.</p>
+        <p>Campbell, Mike. "Meaning, Origin and History of the Name Boris." <em>Behind the Name</em>, <a href="http://www.behindthename.com/name/boris">www.behindthename.com/name/boris</a>.</p>
+        <p>Campbell, Mike. "Meaning, Origin and History of the Name Borislav." <em>Behind the Name</em>, Behind the Name, <a href="http://www.behindthename.com/name/borislav">www.behindthename.com/name/borislav</a>.</p>
+        <p>"Deep Hollow Hollerers." <em>Night In The Woods Wikia</em>, Wikia, 14 Apr. 2017, nightinthewoods.wikia.com/wiki/Deep_Hollow_Hollerers.</p>
+        <p>"Ghost Star." <em>Night in the Woods Wiki</em>, <a href="file:///tmp/d20180130-4-eep627/nightinthewoods.wikia.com/wiki/Ghost_Star">nightinthewoods.wikia.com/wiki/Ghost_Star</a>.</p>
+        <p><em>Google Maps</em>, Google, <a href="http://www.google.com/maps/@40.6646832,-80.0545102,8z/data=!5m1!1e4">www.google.com/maps/@40.6646832,-80.0545102,8z/data=!5m1!1e4</a>.</p>
+        <p>"Gregg." <em>Night in the Woods Wiki</em>, 10 Mar. 2017, <a href="file:///tmp/d20180130-4-eep627/nightinthewoods.wikia.com/wiki/Gregg">nightinthewoods.wikia.com/wiki/Gregg</a>.</p>
+        <p>"Homestead Strike." Edited by 208.102. 58.221, <em>Wikipedia</em>, Wikimedia Foundation, 29 Jan. 2018, <a href="file:///tmp/d20180130-4-eep627/en.wikipedia.org/wiki/Homestead_strike">en.wikipedia.org/wiki/Homestead_strike</a>.</p>
+        <p>"List of Industrial Disasters." <em>Wikipedia</em>, Wikimedia Foundation, 13 Jan. 2018, <a href="file:///tmp/d20180130-4-eep627/en.wikipedia.org/wiki/List_of_industrial_disasters">en.wikipedia.org/wiki/List_of_industrial_disasters</a>.</p>
+        <p>"Mid-Atlantic United States Flood of 2006." <em>Wikipedia</em>, Wikimedia Foundation, 11 Nov. 2017, <a href="file:///tmp/d20180130-4-eep627/en.wikipedia.org/wiki/Mid-Atlantic_United_States_flood_of_2006#Pennsylvania">en.wikipedia.org/wiki/Mid-Atlantic_United_States_flood_of_2006#Pennsylvania</a>.</p>
+        <p>"Pittsburgh, Pennsylvania - Sunrise, Sunset, Dawn and Dusk Times for the Whole Year." <em>Sunrise, Sunset, Dawn and Dusk Times around the World - Gaisma</em>,</p>
+        <p><a href="http://www.gaisma.com/en/location/pittsburgh-pennsylvania.html">www.gaisma.com/en/location/pittsburgh-pennsylvania.html</a>.</p>
+        <p>"Possum Springs." <em>Night In The Woods Gamepedia</em>, Gamepedia, <a href="file:///tmp/d20180130-4-eep627/nightinthewoods.gamepedia.com/Possum_Springs">nightinthewoods.gamepedia.com/Possum_Springs</a>.</p>
+        <p>Saphayla, and Darellos. "What Is the Meaning behind Mae's Dreams?" Edited by Temmie Neko et al., <em>What Is the Meaning behind Mae's Dreams? :: Night in the Woods General Discussions</em>, Steam, 2 Apr. 2017, <a href="file:///tmp/d20180130-4-eep627/steamcommunity.com/app/481510/discussions/0/135512931365494270/">steamcommunity.com/app/481510/discussions/0/135512931365494270/</a>.</p>
+        <p>"Spring Offensive." <em>Wikipedia</em>, Wikimedia Foundation, 26 Jan. 2018, <a href="file:///tmp/d20180130-4-eep627/en.wikipedia.org/wiki/Spring_Offensive">en.wikipedia.org/wiki/Spring_Offensive</a>.</p>
+        </span></ul></ol></span></ul>
+        </div>
+        <div class = "fixed-header">
+            <span class = "fixed-header-logo-wrapper">
+                <span class = "fixed-header-logo-1">NITW</span>
+                <span class = "fixed-header-logo-2">Compendium</span>
+            </span>
+        </div>
+        <div id="scrollMeter-Wrap">
+        	<div id="scrollMeter-Container">
+        		<div id="scrollMeter">
+        		</div>
+        	</div>	
+        </div>
+        <div id = "main-cover">
+            <center>
+                <div class = "main-cover-wrapper">
+                    <span id = "percentage-indicator" class = "main-cover-percentage-indicator">0%</span>
+                    <span id = "done-label" class = "main-cover-percentage-indicator-2">Done <b>|</b> </span>
+                    <span id = "minutes-indicator" class = "main-cover-minutes-indicator">80.5 Minutes Left</span>
+                </div>
+            </center>
+        </div>
+        <!--Body jQuery-->
+        <script>
+            function ScrollIndicator() {
+              scrollPercent = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+              timeLeft = (((scrollPercent-100)*80.905)/100)*-1;
+            }
+            
+            $(function() {
+            	ScrollIndicator();
+            });
+            
+            $(window).scroll(function() {
+            	ScrollIndicator();
+            	document.getElementById("scrollMeter").setAttribute("style","width: " + scrollPercent + "%;");
+            	document.getElementById("percentage-indicator").innerHTML = Math.round(10*scrollPercent)/10 + "%";
+            	document.getElementById("minutes-indicator").innerHTML = Math.round(timeLeft) + " Minutes Left"
+            });
+            /*--
+            function Utils() {
+
+            }
+
+            Utils.prototype = {
+                constructor: Utils,
+                isElementInView: function (element, fullyInView) {
+                    var pageTop = $(window).scrollTop();
+                    var pageBottom = pageTop + $(window).height();
+                    var elementTop = $(element).offset().top;
+                    var elementBottom = elementTop + $(element).height();
+            
+                    if (fullyInView === true) {
+                        return ((pageTop < elementTop) && (pageBottom > elementBottom));
+                    } else {
+                        return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+                    }
+                }
+            };
+            
+            var Utils = new Utils();
+            Deprecated--*/
+        </script>
+    </body>
+</html>
